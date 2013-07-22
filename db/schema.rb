@@ -11,13 +11,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130722014901) do
+ActiveRecord::Schema.define(version: 20130722023133) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "programs", force: true do |t|
+    t.string  "name"
+    t.string  "description"
+    t.string  "air_times"
+    t.string  "rebroadcast_times"
+    t.string  "external_link_name"
+    t.string  "external_link"
+    t.boolean "archived",           default: false, null: false
+  end
+
+  create_table "programs_users", id: false, force: true do |t|
+    t.integer "user_id"
+    t.integer "program_id"
+  end
+
+  create_table "roles", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "roles_users", id: false, force: true do |t|
+    t.integer "role_id"
+    t.integer "user_id"
+  end
+
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
+    t.string   "login"
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
