@@ -34,3 +34,4 @@ end
 
 gem 'devise', "~> 3.0rc"
 gem 'pg'
+gem 'thin'
