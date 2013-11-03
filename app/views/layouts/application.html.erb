@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>HollowEarthRadio</title>
+  <title> <%= content_for?(:title) ? content_for(:title) : "Hollow Earth Radio" %></title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= render "shared/nav" %>
+	<nav>
+		<%= render "shared/nav" %>
+	</nav>
 
-<%= yield %>
-
+	<section>
+		<%= yield %>
+	</section>
 </body>
 </html>
