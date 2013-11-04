@@ -1,0 +1,20 @@
+/* _broadcasting.scss */
+
+@import 'modules/add_field_radius';
+
+$perimeter: 80px;
+
+#listen_button {
+	@include add-field-radius(999px);
+	border-radius: 999px;
+	border: $perimeter/10 dotted lightblue;
+	text-align: justify;
+	background-color: #333;
+	width: $perimeter;
+	height: $perimeter;
+	padding: $perimeter/6.66 15px 10px 15px;
+	font-weight: bold;
+	font-style: italic;
+	color: #FFF;
+	float: left;
+}

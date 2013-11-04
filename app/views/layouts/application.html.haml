@@ -1,0 +1,16 @@
+!!!
+%html
+  %head
+    %title
+      = content_for?(:title) ? content_for(:title) : "Hollow Earth Radio"
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+  %body
+    %header
+      %h1 Hollow Earth Radio
+      = render "shared/broadcasting"
+    %nav
+      = render "shared/nav"
+    %section
+      = yield
