@@ -1,4 +1,5 @@
 /* _nav.scss */
+@import 'modules/global_vars';
 
 nav {
 	float: left;
@@ -9,13 +10,16 @@ nav {
 		padding:0px;
 		li, a {
 			list-style: none;
-			background-color: fuchsia;
+			background-color: $common_pink;
 			color: #fff;
-			text-shadow: 1px 1px lightblue;
+			text-shadow: 1px 1px $common_blue;
 			display: table;
 			margin: 3px 0px 3px 0px;
 			padding-right:2px;
 			font-size: 17px;
+			&:hover {
+				background-color: $common_blue;
+			}
 		}
 	}
 }

@@ -7,10 +7,13 @@
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
   %body
-    %header
-      %h1 Hollow Earth Radio
-      = render "shared/broadcasting"
-    %nav
-      = render "shared/nav"
-    %section
-      = yield
+    #wrapper
+      %header
+        = render "shared/header"
+      %nav
+        = render "shared/nav"
+      %section
+        = yield
+
+    %footer
+      = render "shared/footer"
