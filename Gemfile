@@ -35,3 +35,8 @@ end
 gem 'devise', "~> 3.0rc"
 gem 'pg'
 gem 'thin'
+
+gem 'activeadmin',         github: 'gregbell/active_admin'
+gem 'ransack',             github: 'ernie/ransack'
+gem 'inherited_resources', github: 'josevalim/inherited_resources'
+gem 'formtastic',          github: 'justinfrench/formtastic'
