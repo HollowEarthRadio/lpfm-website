@@ -40,3 +40,7 @@ gem 'activeadmin',         github: 'gregbell/active_admin'
 gem 'ransack',             github: 'ernie/ransack'
 gem 'inherited_resources', github: 'josevalim/inherited_resources'
 gem 'formtastic',          github: 'justinfrench/formtastic'
+
+#Styling Gems
+gem 'bootstrap-sass', '~> 3.0.1.0.rc'
+gem "haml", "~> 4.0.3"
