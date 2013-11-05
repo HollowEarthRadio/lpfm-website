@@ -1,0 +1,21 @@
+{
+	"folders":
+	[
+		{
+			"follow_symlinks": true,
+			"path": "/Users/boontdustie/git/lpfm-website"
+		}
+	],
+	"settings":
+		{
+			"tab_size": 2,
+			"bold_folder_labels": true,
+			"draw_white_space": "all",
+			"ensure_newline_at_eof_on_save": true,
+			"highlight_modified_tabs": true,
+			"translate_tabs_to_spaces": false,
+			"indent_to_bracket": true,
+			"trim_trailing_white_space_on_save": true,
+			"word_wrap": "true"
+		},
+}
