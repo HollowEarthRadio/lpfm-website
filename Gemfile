@@ -6,8 +6,15 @@ gem 'rails', '4.0.0'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 
+<<<<<<< HEAD
+# styling gems
+gem 'sass-rails', '~> 4.0.0'
+gem 'bootstrap-sass', '~> 3.0.1.0.rc'
+gem "haml", "~> 4.0.3"
+=======
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
+>>>>>>> 9d5cab4b27e30a9555e0532773661268825cf046
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -32,6 +39,19 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+<<<<<<< HEAD
+# Use ActiveModel has_secure_password
+# gem 'bcrypt-ruby', '~> 3.0.0'
+
+# Use unicorn as the app server
+# gem 'unicorn'
+
+# Use Capistrano for deployment
+# gem 'capistrano', group: :development
+
+# Use debugger
+# gem 'debugger', group: [:development, :test]
+=======
 gem 'devise', "~> 3.0rc"
 gem 'pg'
 gem 'thin'
@@ -40,3 +60,8 @@ gem 'activeadmin',         github: 'gregbell/active_admin'
 gem 'ransack',             github: 'ernie/ransack'
 gem 'inherited_resources', github: 'josevalim/inherited_resources'
 gem 'formtastic',          github: 'justinfrench/formtastic'
+
+#Styling Gems
+gem 'bootstrap-sass', '~> 3.0.1.0.rc'
+gem "haml", "~> 4.0.3"
+>>>>>>> 9d5cab4b27e30a9555e0532773661268825cf046
