@@ -65,7 +65,7 @@ ActiveAdmin.setup do |config|
   #
   # This setting changes the method which Active Admin calls
   # to return the currently logged in user.
-  config.current_user_method = :current_admin_user
+  config.current_user_method = :current_user
 
 
   # == Logging Out
@@ -78,7 +78,7 @@ ActiveAdmin.setup do |config|
   # will call the method to return the path.
   #
   # Default:
-  config.logout_link_path = :destroy_admin_user_session_path
+  config.logout_link_path = :destroy_user_session_path
 
   # This setting changes the http method used when rendering the
   # link. For example :get, :delete, :put, etc..
@@ -101,10 +101,10 @@ ActiveAdmin.setup do |config|
   # This allows your users to comment on any resource registered with Active Admin.
   #
   # You can completely disable comments:
-  # config.allow_comments = false
+  config.allow_comments = false
   #
   # You can disable the menu item for the comments index page:
-  # config.show_comments_in_menu = false
+   config.show_comments_in_menu = false
   #
   # You can change the name under which comments are registered:
   # config.comments_registration_name = 'AdminComment'
@@ -206,4 +206,11 @@ ActiveAdmin.setup do |config|
   #
   # config.filters = true
 
+end
+
+ActiveAdmin::ResourceController.class_eval do
+  # BLACK MASS ASSIGN BUDZ
+  def resource_params
+    [(params[resource_request_name] || params[resource_instance_name]).try(:permit!) || {}]
+  end
 end
