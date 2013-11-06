@@ -6,7 +6,11 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, Rails.env)
 
+<<<<<<< HEAD
 module HollowEarthRadio
+=======
+module LpfmWebsite
+>>>>>>> 9d5cab4b27e30a9555e0532773661268825cf046
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers

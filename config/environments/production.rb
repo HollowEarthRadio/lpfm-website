@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 HollowEarthRadio::Application.configure do
+=======
+LpfmWebsite::Application.configure do
+>>>>>>> 9d5cab4b27e30a9555e0532773661268825cf046
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.

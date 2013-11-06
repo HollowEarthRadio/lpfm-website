@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # SQLite version 3.x
 #   gem install sqlite3
 #
@@ -23,3 +24,21 @@ production:
   database: db/production.sqlite3
   pool: 5
   timeout: 5000
+=======
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: lpfm_development
+  pool: 5
+  username: lpfm_website
+  password:
+  socket: /var/pgsql_socket
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: lpfm_test
+  pool: 5
+  username: lpfm_website
+  password:
+>>>>>>> 9d5cab4b27e30a9555e0532773661268825cf046

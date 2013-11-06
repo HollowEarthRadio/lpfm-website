@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 HollowEarthRadio::Application.routes.draw do
   #get "home/index"
   # The priority is based upon order of creation: first created -> highest priority.
@@ -54,4 +55,11 @@ HollowEarthRadio::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+=======
+LpfmWebsite::Application.routes.draw do
+  root 'home#index'
+
+  devise_for :users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+>>>>>>> 9d5cab4b27e30a9555e0532773661268825cf046
 end
