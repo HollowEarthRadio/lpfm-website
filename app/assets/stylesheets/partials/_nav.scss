@@ -1,0 +1,25 @@
+/* _nav.scss */
+@import 'modules/global_vars';
+
+nav {
+	float: left;
+	text-transform: uppercase;
+	clear: both;
+	ul {
+		margin:0px;
+		padding:0px;
+		li, a {
+			list-style: none;
+			background-color: $common_pink;
+			color: #fff;
+			text-shadow: 1px 1px $common_blue;
+			display: table;
+			margin: 3px 0px 3px 0px;
+			padding-right:2px;
+			font-size: 17px;
+			&:hover {
+				background-color: $common_blue;
+			}
+		}
+	}
+}

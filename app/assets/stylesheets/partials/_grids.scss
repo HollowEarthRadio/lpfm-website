@@ -1,0 +1,74 @@
+/* _grids.scss */
+
+@import 'modules/global_vars';
+
+
+body {
+	font-family: "john-doe";
+	width: 1500px;
+}
+
+#wrapper {
+	margin: 0px auto;
+	margin-top: 20px;
+}
+
+h1 {
+	color: #FFF;
+	font-size: 26px;
+	background-color: $common_blue;
+	text-shadow: 1px 1px #333;
+	margin-bottom: 10px;
+}
+
+h2 {
+		font-size: 14px;
+		background-color: #333;
+		color: #fff;
+		padding: 0px;
+		margin: 0px 0px 20px 0px;
+		text-align: left;
+}
+
+article {
+	h1 {
+		font-size:22px;
+	}
+}
+
+section {
+	width: 600px;
+	float: right;
+	.section_title {
+		margin-top: 30px;
+		display: block;
+		margin-bottom: 30px;
+		font-size: 31px;
+		text-transform: uppercase;
+	}
+}
+
+footer {
+	clear:both;
+	padding: 30px	;
+	background-color: #000;
+	color: #fff;
+	height: 75px;
+	width: auto;
+}
+
+.home_section {
+	margin-bottom: 20px 0px 20px 0px;
+}
+
+.program_image {
+	float:left;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	border-bottom: 1px solid #333;
+	border-right: 1px solid #333;
+}
+
+.program_details.title {
+
+}
