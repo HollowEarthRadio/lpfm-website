@@ -1,5 +1,7 @@
 LpfmWebsite::Application.routes.draw do
 
+  resources :events
+
   devise_for :users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 

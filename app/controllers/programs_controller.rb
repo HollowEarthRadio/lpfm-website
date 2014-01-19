@@ -1,4 +1,6 @@
 class ProgramsController < ApplicationController
+  layout "index"
+
     def index
         @programs = Program.find(:all, :order => "updated_at DESC", :conditions => {:parent_id => nil })
 

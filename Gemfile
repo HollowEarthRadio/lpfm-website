@@ -40,3 +40,5 @@ gem 'activeadmin',         github: 'gregbell/active_admin'
 gem 'ransack',             github: 'ernie/ransack'
 gem 'inherited_resources', github: 'josevalim/inherited_resources'
 gem 'formtastic',          github: 'justinfrench/formtastic'
+gem 'pry'
+gem 'awesome_print'  # awesome_print, it's awesome! could want in production?
