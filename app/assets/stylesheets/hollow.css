@@ -1,0 +1,70 @@
+body {
+	font-family: verdana, arial, helvetica, sans-serif;
+	background-color: #291d0b;
+	color: #e6a356;
+}
+
+div { background-color: transparent; }
+
+div.donate {
+	margin-left: 20px;
+	position: relative;
+	top: 0px;
+	float: left;
+	width: 360px;
+	height: 60px;
+}
+
+div.content {
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-size:   13px;
+	line-height: 18px;
+	position: absolute;
+	border: 0px solid red;
+	padding: 6px;
+	padding-left:30px;
+	padding-top:50px;
+	overflow: auto;
+}
+
+/* dude, I rocked the CSS2 multiple class */
+div.left { left: 0px; }
+div.right { 
+	left: 344px; 
+	width:550px;
+	padding-top:40px;
+}
+
+div.special { 
+	left: 800px;
+	 }
+
+div.navbar {
+	clear: left;
+	position: relative;
+	top: 20px;
+	background-repeat: no-repeat;
+	background-position: left;
+	border: 0px solid gray;
+	height: 40px;
+	width: 905px;
+}
+div.navbar a {
+	float: left;
+	font-family: courier;
+	font-size: 10pt;
+	font-weight: 700;
+	color: #e6a356;
+	margin-right: 14px;
+	margin-top: 5px;
+}
+div.navbar a:hover { color: rgb(140,140,250); }
+a { 
+	color: rgb(230,180,235); 
+	text-decoration: none;
+}
+a:hover { color: rgb(240,140,100); }
+
+div.winamp { 
+	color: #c5bbbb;
+}

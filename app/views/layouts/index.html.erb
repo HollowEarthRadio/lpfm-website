@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta name="google-site-verification" content="-CDGXuVzjjs_selz5uiO3BcWWgLA2uh5Wf3GZjZBuu4" />
+    <title>Hollow Earth Radio</title>
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag "her" %>
+    <%= stylesheet_link_tag "her-program" %>
+
+
+    <!--[if lt IE 8]>
+      <%= stylesheet_link_tag "her-ie" %>
+    <![endif]-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <%= javascript_include_tag "jquery-1.3.2.min" %>
+    <%= javascript_include_tag "cufon-yui" %>
+    <%= javascript_include_tag "bookman_600.font" %>
+
+    <script type="text/javascript">
+      Cufon.replace('h1');
+      Cufon.replace('h2');
+      Cufon.replace('h3');
+      Cufon.replace('#navigation li a');
+
+      /** Magma Gradient */
+      Cufon.replace('#navigation li strong  a', {
+        color: '-linear-gradient(#ff6600, #ff6600, #ff3300, rgb(0, 0, 0))'
+      });
+
+      /** Seaport Gradient */
+      Cufon.replace('#navigation li strong span a', {
+        color: '#619BD9'
+      });
+
+
+      /** BLINK */
+      spe=500;
+      NameOfYourTags="mi";
+
+      swi=1;
+      na=document.getElementsByName(NameOfYourTags);
+
+      bringBackBlinky();
+
+      function bringBackBlinky() {
+
+      if (swi == 1) {
+      sho="visible";
+      swi=0;
+      }
+      else {
+      sho="hidden";
+      swi=1;
+      }
+
+      for(i=0;i<na.length;i++) {
+      na[i].style.visibility=sho;
+      }
+
+      setTimeout("bringBackBlinky()", spe);
+      }
+    </script>
+  </head>
+  <body>
+
+  <div id="wrapper">
+    <div id="header">
+      <%=image_tag "template/spacer.gif", :size => "1000x169", :border => "0", :usemap => "#bannerLinks", :alt => "spacer"%>
+
+        <map name="bannerLinks" id="bannerLinks">
+          <area href="http://hollowearthradio.org/home" alt="Home" title="" shape="rect" coords="198,24,816,69"/>
+          <area href="http://www.loudcity.com/stations/hollow-earth-radio/files/show/listen.html" alt="Listen" title="" shape="rect" coords="841,18,961,70"/>
+        </map>
+    </div>
+
+    <div id="navigation">
+      <p style="margin-top:0px;">&nbsp;</p>
+
+      <ul>
+        <li><strong><%= link_to 'Magma', controller: 'home', action: 'magma' %></strong></li>
+        <li>
+          <strong>
+            <span/>
+            <%= link_to 'Sea-Port Beat', controller: 'home', action: 'theseaportbeat' %>
+          </strong>
+        </li>
+        <li><a href="http://hollowearthradio.org/home">Home</a></li>
+        <li><%= listen_link("Listen") %></li>
+        <li><%= link_to 'About', controller: 'home', action: 'about' %></li>
+        <li><%= link_to 'Radio Shows', controller: 'programs', action: 'index' %></li>
+        <li><%= link_to 'Schedule', controller: 'home', action: 'schedule' %></li>
+        <li><%= link_to 'Contact', controller: 'home', action: 'contact' %></li>
+        <li><%= link_to 'Donate', controller: 'home', action: 'donate' %> </li>
+        <li><%= link_to 'Volunteer', controller: 'home', action: 'volunteer' %></li>
+        <li><%= link_to 'Submissions', controller: 'home', action: 'contribute' %></li>
+        <li><%= link_to 'Blog', 'http://hollowearthradio.tumblr.com' %></li>
+        <li><%= link_to 'FAQ', controller: 'home', action: 'faq' %> </li>
+        <li><%= link_to 'Podcasts', 'http://www.soundcloud.com/hollowearthradio' %></li>
+
+        <li style=""><%= image_tag "trans-logo.png", :size=> "140x170"%></li>
+      </ul>
+
+      <div id="djs">
+        <h3 style="color:#fff;margin:0 0 10px 0;border-bottom:1px dotted #fff;">Shows</h3>
+        <%# Program.current.each do |p| %>
+          <%#= p.name %>
+        <%# end %>
+      </div>
+    </div>
+  <!-- END sidebar -->
+
+    <div id="main">
+      <div id="content">
+        <div id="top-navigation">
+          <span style="float:left;font-size:12px;">
+            <%= dj_mailto%> | CALL A DJ 206-905-1250 | LEAVE WEIRD VOICEMAILS 206-588-KHER
+            <a href="http://twitter.com/hollowearth">&nbsp;| @hollowearth</a>|
+          </span>
+        </div>
+          <%= yield %>
+      </div>
+    </div>
+
+    <div id="footer">
+    </div>
+  </div>
+
+  <script type="text/javascript"> Cufon.now(); </script>
+  </body>
+</html>
