@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  layout "index"
+  layout "default"
 
   def index
     @program = Program.first

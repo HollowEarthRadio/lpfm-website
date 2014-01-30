@@ -102,7 +102,7 @@
 
       <div id="djs">
         <h3 style="color:#fff;margin:0 0 10px 0;border-bottom:1px dotted #fff;">Shows</h3>
-        <%# Program.current.each do |p| %>
+        <%# Program.scheduled.each do |p| %>
           <%#= p.name %>
         <%# end %>
       </div>
@@ -114,9 +114,10 @@
         <div id="top-navigation">
           <span style="float:left;font-size:12px;">
             <%= dj_mailto%> | CALL A DJ 206-905-1250 | LEAVE WEIRD VOICEMAILS 206-588-KHER
-            <a href="http://twitter.com/hollowearth">&nbsp;| @hollowearth</a>|
+            <a href="http://twitter.com/hollowearth">&nbsp;| @hollowearth</a> |
           </span>
         </div>
+        <br/>
         <%= yield %>
       </div>
     </div>
