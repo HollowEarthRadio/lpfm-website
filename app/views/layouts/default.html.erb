@@ -102,9 +102,9 @@
 
       <div id="djs">
         <h3 style="color:#fff;margin:0 0 10px 0;border-bottom:1px dotted #fff;">Shows</h3>
-        <%# Program.scheduled.each do |p| %>
-          <%#= p.name %>
-        <%# end %>
+        <% Program.scheduled.each do |p| %>
+          <%= image_tag p.program_image.url(:thumbnail) %>
+        <% end %>
       </div>
     </div>
   <!-- END sidebar -->

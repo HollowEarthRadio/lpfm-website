@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140119072612) do
+ActiveRecord::Schema.define(version: 20140202080603) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,13 +58,22 @@ ActiveRecord::Schema.define(version: 20140119072612) do
   end
 
   create_table "programs", force: true do |t|
-    t.string  "name"
-    t.string  "description"
-    t.string  "air_times"
-    t.string  "rebroadcast_times"
-    t.string  "external_link_name"
-    t.string  "external_link"
-    t.boolean "archived",           default: false, null: false
+    t.string   "name"
+    t.string   "description"
+    t.string   "air_times"
+    t.string   "rebroadcast_times"
+    t.string   "external_link_name"
+    t.string   "external_link"
+    t.boolean  "archived",                   default: false, null: false
+    t.string   "program_image_file_name"
+    t.string   "program_image_content_type"
+    t.integer  "program_image_file_size"
+    t.datetime "program_image_updated_at"
+    t.boolean  "is_broadcasting",            default: false, null: false
+    t.datetime "broadcast_starttime"
+    t.text     "message"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "programs_users", id: false, force: true do |t|
@@ -97,6 +106,7 @@ ActiveRecord::Schema.define(version: 20140119072612) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "dj_name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
