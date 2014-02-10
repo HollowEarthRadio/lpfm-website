@@ -5,4 +5,8 @@ class HomeController < ApplicationController
     @program = Program.first
     @events = Event.public
   end
+
+  def splash
+    render layout: false
+  end
 end

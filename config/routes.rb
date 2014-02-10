@@ -16,5 +16,6 @@ LpfmWebsite::Application.routes.draw do
   get "/faq", controller: "home", action: 'faq'
   get '/theseaportbeat', controller: "home", action: "theseaportbeat"
   get '/magma', controller: "home", action: "magma"
-  root to: 'home', action: 'index'
+  get '/splash', controller: "home", action: "splash"
+  root to: 'home', action: 'splash'
 end

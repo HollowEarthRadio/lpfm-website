@@ -97,7 +97,7 @@
       <div id="djs">
         <h3 style="color:#fff;margin:0 0 10px 0;border-bottom:1px dotted #fff;">Shows</h3>
         <% Program.scheduled.each do |p| %>
-          <%= image_tag p.program_image.url(:thumbnail) %>
+          <%= link_to image_tag(p.program_image.url(:thumbnail)), program_path(p) %>
         <% end %>
       </div>
     </div>
@@ -107,7 +107,7 @@
       <div id="content">
         <div id="top-navigation">
           <span style="float:left;font-size:12px;">
-            <%= dj_mailto%> | CALL A DJ 206-905-1250 | LEAVE WEIRD VOICEMAILS 206-588-KHER
+            <%= dj_mailto %> | CALL A DJ 206-905-1250 | LEAVE WEIRD VOICEMAILS 206-588-KHER
             <a href="http://twitter.com/hollowearth">&nbsp;| @hollowearth</a> |
           </span>
         </div>
