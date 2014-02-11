@@ -1,11 +1,13 @@
 LpfmWebsite::Application.routes.draw do
 
   resources :events
+  resources :users
+  resources :programs
 
   devise_for :users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
-  resources :programs
+  post 'admin/users/:id/update_role' => 'admin/users#update_role',  :id => /[0-9]+/, as: :admin_update_user_role
 
   get "/about", controller: "home", action: 'about'
   get "/contact", controller: "home", action: 'contact'

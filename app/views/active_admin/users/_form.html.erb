@@ -1,0 +1,39 @@
+<%= semantic_form_for @user do |form| %>
+  <%= form.inputs "User Details" do %>
+    <%= form.input :email %>
+    <%= form.input :dj_name %>
+  <% end %>
+  <%= form.actions do %>
+    <%= form.action :submit %>
+    <%= form.action :cancel, label: "Cancel" %>
+  <% end %>
+<% end %>
+
+<div id="status"></div>
+<h3>Roles</h3>
+<% Role.all.each do |role| %>
+  <%= check_box_tag role.name,
+        role.id,
+        checked = @user.roles.include?(role),
+        class: "check-box-role",
+        :'data-url' => "/admin/users/#{@user.id}/update_role",
+        :'data-role-id' => role.id %>
+  <%= label_tag role.name %><br/>
+<% end %>
+
+<script type="text/javascript">
+   $('.check-box-role').click(function(event) {
+     $.ajax(
+       { url: $(this).attr('data-url'),
+         type: "POST",
+         data: {
+           role_id: $(this).attr('data-role-id'),
+           has_role: ($(this).attr("checked") == null) ? "false" : "true"
+         }
+       }
+     ).done(function(data)  {
+       $('#status').html("Role changed.").
+         stop().css("background-color", "#FFFF9C").animate({ backgroundColor: "#FFFFFF"}, 1500);
+     });
+   });
+</script>
