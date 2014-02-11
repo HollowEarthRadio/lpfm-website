@@ -9,4 +9,8 @@ class HomeController < ApplicationController
   def splash
     render layout: false
   end
+
+  def magma
+    @magma_shows = MagmaShow.all.order("date DESC")
+  end
 end

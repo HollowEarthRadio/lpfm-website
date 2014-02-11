@@ -1,0 +1,12 @@
+<div style="width:690px;height:193px;border-style:solid;border-width:1px;margin:5px 0px 5px 0px;">
+    <div style="float:left">
+       <%= link_to(image_tag(magma_show.poster_image.url(:thumbnail)), magma_show.poster_image.url) %>
+    </div>
+
+    <div style="padding-left:120px;margin-left:35px">
+        <b><%= link_to magma_show.title, magma_show.link %> </b><br>
+        <br>
+        <%= magma_show.body.html_safe %>
+        <br/>
+    </div>
+</div>

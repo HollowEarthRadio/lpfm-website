@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140203000946) do
+ActiveRecord::Schema.define(version: 20140211085126) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,9 +61,23 @@ ActiveRecord::Schema.define(version: 20140203000946) do
     t.datetime "event_image_updated_at"
   end
 
+  create_table "magma_shows", force: true do |t|
+    t.string   "name"
+    t.datetime "date"
+    t.string   "link"
+    t.text     "body"
+    t.string   "venue"
+    t.string   "poster_image_file_name"
+    t.string   "poster_image_content_type"
+    t.integer  "poster_image_file_size"
+    t.datetime "poster_image_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "programs", force: true do |t|
     t.string   "name"
-    t.string   "description"
+    t.text     "description"
     t.string   "air_times"
     t.string   "rebroadcast_times"
     t.string   "external_link_name"

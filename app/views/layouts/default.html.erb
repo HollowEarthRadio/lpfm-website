@@ -77,7 +77,7 @@
 
       <ul>
         <li><strong><%= link_to 'Magma', controller: 'home', action: 'magma' %></strong></li>
-        <li><a href="http://hollowearthradio.org/home">Home</a></li>
+        <li><%= link_to "Home", controller: 'home', action: 'index' %></li>
         <li><%= listen_link("Listen") %></li>
         <li><%= link_to 'About', controller: 'home', action: 'about' %></li>
         <li><%= link_to 'Radio Shows', controller: 'programs', action: 'index' %></li>
