@@ -14,3 +14,12 @@ test:
   pool: 5
   username: lpfm_website
   password:
+
+# production:
+#   adapter: postgresql
+#   encoding: unicode
+#   database: lpfm_development
+#   pool: 5
+#   username: lpfm_website
+#   password:
+#   socket: /var/pgsql_socket
