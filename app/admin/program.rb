@@ -1,5 +1,13 @@
 ActiveAdmin.register Program do
 
+  config.clear_sidebar_sections!
+
+  index do
+    column :id
+    column :name
+    default_actions
+  end
+
   form do |f|
     f.inputs "LIVE SETTINGS" do
       f.input :is_broadcasting
@@ -16,7 +24,7 @@ ActiveAdmin.register Program do
       f.input :external_link
       f.input :archived
       f.input :program_image
-      f.input :users, as: :check_boxes, :collection => Hash[User.all.map{|b| [b.dj_name,b.id]}]
+      f.input :users, as: :check_boxes, :collection => Hash[Role.find_by_name("dj").users.map{|b| [b.dj_name,b.id]}]
     end
 
     f.actions do

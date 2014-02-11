@@ -1,4 +1,12 @@
 ActiveAdmin.register Event do
+  config.clear_sidebar_sections!
+
+  index do
+    column :id
+    column :name
+    column :public
+    default_actions
+  end
 
   form do |f|
     f.inputs "Event" do
