@@ -2,7 +2,7 @@ class HomeController < ApplicationController
   layout "default"
 
   def index
-    @program = Program.first
+    @program = Program.random
     @events = Event.public
   end
 
