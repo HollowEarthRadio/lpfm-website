@@ -35,8 +35,6 @@ LpfmWebsite::Application.configure do
   # Version of your assets, change this if you want to expire all your assets.
   config.assets.version = '1.2'
 
-  config.initialize_on_precompile = false
-
   config.assets.precompile += %w(
     template/*
     application.js
@@ -44,13 +42,13 @@ LpfmWebsite::Application.configure do
     bookman_600.font.js
     cufon-yui.js
     pollstation.js
-    active_admin.css.scss
-    events.css.scss
-    her-ie.css.scss
+    active_admin.css
+    events.css
+    her-ie.css
     her-program.css
-    her.css.scss
-    hollow.css.scss
-    active-admin.css.scss
+    her.css
+    hollow.css
+    active-admin.css
   )
 
   # Specifies the header that your server uses for sending files.
