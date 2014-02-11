@@ -18,6 +18,9 @@ ActiveAdmin.register User do
     column :id
     column :dj_name
     column :email
+    column "DJ?" do |u|
+      u.dj?
+    end
     default_actions
   end
 
