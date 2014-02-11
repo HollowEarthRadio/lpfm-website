@@ -44,5 +44,5 @@ LpfmWebsite::Application.configure do
     active-admin.css.scss
   )
   config.assets.digest = true
-  config.assets.compress = false
+  config.assets.compress = true
 end

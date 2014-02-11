@@ -44,10 +44,10 @@ LpfmWebsite::Application.configure do
     pollstation.js
     active_admin.css.scss
     events.css.scss
-    her-ie.css
+    her-ie.css.scss
     her-program.css
-    her.css
-    hollow.css
+    her.css.scss
+    hollow.css.scss
     active-admin.css.scss
   )
 
