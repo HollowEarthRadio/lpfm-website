@@ -31,6 +31,7 @@ LpfmWebsite::Application.configure do
 
   # Generate digests for assets URLs.
   config.assets.digest = true
+  config.assets.debug = true
 
   # Version of your assets, change this if you want to expire all your assets.
   config.assets.version = '1.0'
