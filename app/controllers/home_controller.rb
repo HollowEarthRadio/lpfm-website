@@ -11,6 +11,6 @@ class HomeController < ApplicationController
   end
 
   def magma
-    @magma_shows = MagmaShow.all.order("date DESC")
+    @magma_shows = MagmaShow.all.order("date ASC")
   end
 end
