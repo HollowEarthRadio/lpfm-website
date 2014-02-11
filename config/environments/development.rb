@@ -25,5 +25,24 @@ LpfmWebsite::Application.configure do
   # Debug mode disables concatenation and preprocessing of assets.
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
-  config.assets.debug = true
+  config.assets.debug = false
+
+  config.assets.compile = true
+  config.assets.precompile += %w(
+    template/*
+    application.js
+    active_admin.js.coffee
+    bookman_600.font.js
+    cufon-yui.js
+    pollstation.js
+    active_admin.css.scss
+    events.css.scss
+    her-ie.css
+    her-program.css
+    her.css
+    hollow.css
+    active-admin.css.scss
+  )
+  config.assets.digest = true
+  config.assets.compress = false
 end

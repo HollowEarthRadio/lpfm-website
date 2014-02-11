@@ -7,9 +7,8 @@
     <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag "her" %>
-    <%= stylesheet_link_tag "her-program" %>
-
+    <%= stylesheet_link_tag "her", :media => "all" %>
+    <%= stylesheet_link_tag "her-program", :media => "all" %>
 
     <!--[if lt IE 8]>
       <%= stylesheet_link_tag "her-ie" %>
@@ -65,7 +64,7 @@
 
   <div id="wrapper">
     <div id="header">
-      <%=image_tag "template/spacer.gif", :size => "1000x169", :border => "0", :usemap => "#bannerLinks", :alt => "spacer"%>
+      <%= image_tag "template/spacer.gif", :size => "1000x169", :border => "0", :usemap => "#bannerLinks", :alt => "spacer"%>
 
         <map name="bannerLinks" id="bannerLinks">
           <area href="http://hollowearthradio.org/home" alt="Home" title="" shape="rect" coords="198,24,816,69"/>

@@ -28,7 +28,7 @@ font-size:14px;
 color:#fff;
 margin:0;
 text-align:center;
-background-image:url("/assets/template/her_body-bg.jpg");
+background-image:url(image-path("template/her_body-bg.jpg"));
 background-position:top;
 background-repeat:repeat-x;
 }
@@ -50,7 +50,7 @@ margin:0 auto;
 width:1000px;
 height:165px;
 background:#2c2419;
-background-image:url("/assets/template/her_bg_header.jpg");
+background-image:url(image-path("template/her_bg_header.jpg"));
 background-repeat:no-repeat;
 }
 
@@ -60,7 +60,7 @@ width:278px;
 text-align:left;
 min-height:667px;
 background:#2c2419;
-background-image:url("/assets/template/her_bg_nav.jpg");
+background-image:url(image-path("template/her_bg_nav.jpg"));
 background-repeat:no-repeat;
 }
 
@@ -150,7 +150,7 @@ margin:0 auto;
 width:1000px;
 height:189px;
 float:left;
-background-image:url("/assets/template/her_bg_footer.jpg");
+background-image:url(image-path("template/her_bg_footer.jpg"));
 }
 
 /*LINKS*/
