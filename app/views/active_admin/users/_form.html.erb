@@ -1,4 +1,4 @@
-<%= semantic_form_for @user do |form| %>
+<%= semantic_form_for [:admin, @user] do |form| %>
   <%= form.inputs "User Details" do %>
     <%= form.input :email %>
     <%= form.input :dj_name %>
