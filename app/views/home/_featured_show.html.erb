@@ -1,0 +1,19 @@
+<% if false #Program.current_program %>
+    <h3 >NOW BROADCASTING<span name="mi">!!!!!!</span></h3>
+<% else %>
+    <h3>Featured Show</h3>
+<% end %>
+  <p>
+
+<%= image_tag program.program_image.url(:medium) %>
+<span class="featured-title">
+  <%= link_to program.name, program_path(program) %> <br/>
+    <%= program.air_times %><br />
+    <% program.users.each do |dj| %>
+      <%= dj.dj_name %><br/>
+    <% end %>
+</span>
+  <strong> Program Description:</strong>
+  <%= program.description %><br/>
+  </p>
+

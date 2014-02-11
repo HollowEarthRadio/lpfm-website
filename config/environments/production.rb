@@ -32,8 +32,26 @@ LpfmWebsite::Application.configure do
   # Generate digests for assets URLs.
   config.assets.digest = true
 
+  config.assets.debug = true
+
   # Version of your assets, change this if you want to expire all your assets.
   config.assets.version = '1.0'
+
+  config.assets.precompile += %w(
+    template/*
+    application.js
+    active_admin.js.coffee
+    bookman_600.font.js
+    cufon-yui.js
+    pollstation.js
+    active_admin.css.scss
+    events.css.scss
+    her-ie.css.scss
+    her-program.css
+    her.css.scss
+    hollow.css.scss
+    active-admin.css.scss
+  )
 
   # Specifies the header that your server uses for sending files.
   # config.action_dispatch.x_sendfile_header = "X-Sendfile" # for apache

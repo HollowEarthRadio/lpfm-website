@@ -8,8 +8,11 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :programs
   has_and_belongs_to_many :roles
 
-  validates :email, :login, :password, presence: true
-  validates :password, presence: true, :if => :password_required?
-  validates :password_confirmation, presence: true, :if => :password_required?
+  validates :email, presence: true
+  validates :password, presence: true, if: :password_required?
+  validates :password_confirmation, presence: true, if: :password_required?
 
+  def dj?
+    roles.map(&:name).include?('dj')
+  end
 end

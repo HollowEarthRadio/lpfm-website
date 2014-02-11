@@ -1,0 +1,61 @@
+.tinylink{
+font-size:12px;
+}
+
+.program-image{
+width:320px;
+margin:15px 15px 0 1px;
+float:left;
+overflow:hidden;
+}
+
+.program-image img{
+border:1px #433323 solid;
+}
+
+.program-info{
+width:330px;
+margin:0;
+padding:10px;
+float:left;
+color:#1e160f;
+font-size:16px;
+}
+
+.program-info p{
+margin:0 0 0 2px;
+}
+
+.program-playlists{
+width:330px;
+margin: 10px 0 0 0;
+padding:10px;
+float:left;
+font-size:16px;
+}
+
+.program-playlists a{
+font-weight:bold;
+text-decoration:none;
+}
+
+.program-playlists a:hover{
+text-decoration:underline;
+}
+
+.program-bio{
+width:300px;
+margin:15px 15px 0 1px;
+padding:10px;
+float:left;
+clear: both;
+background:#bda593;
+color:#1e160f;
+border:1px #433323 dotted;
+}
+
+.program-bio p{
+margin:0 0 0 2px;
+}
+
+

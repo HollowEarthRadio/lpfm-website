@@ -1,0 +1,43 @@
+<h2> Rad Radio Shows On Hollow Earth </h2>
+<p/>
+ <% i = 4 %>
+ <% unless @programs.nil? %>
+  <% program_count = @programs.count.to_i %>
+ <% end %>
+
+ <% @programs.each do |program| %>
+   <% if( i%2 == 0) %>
+     <div style="float:left; margin-left:10px; margin-right:20px;max-width:300px;">
+   <% else %>
+      <div style="float:right;max-width:300px">
+   <% end %>
+      <%= link_to image_tag(program.program_image.url(:medium)), program_path(program)  %>
+      <br />
+
+       Show Name: <%= link_to program.name, program_path(program) %>
+       <br/>
+       <% program.users.each do |dj| %>
+         <%= dj.display_name %><br/>
+       <% end %>
+       Air Times: <%= program.air_times %><br />
+    </div>
+
+    <% if ((i - 3) == program_count.to_i ) %>
+
+    <% else %>
+        <% if (i%2 != 0) %>
+            <br />
+            <br />
+            <br />
+
+            <div style="clear:both;"></div>
+             <hr />
+             <br />
+
+             <br />
+
+        <% end %>
+    <% end %>
+    <% i = i + 1 %>
+
+<%end%>

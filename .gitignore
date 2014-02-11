@@ -24,6 +24,7 @@
 /*.vim
 /assets
 /public/system
+/public/assets
 /.env
 /.pry_history
 /config/application.yml
