@@ -17,7 +17,7 @@
        Show Name: <%= link_to program.name, program_path(program) %>
        <br/>
        <% program.users.each do |dj| %>
-         <%= dj.display_name %><br/>
+         <%= dj.dj_name %><br/>
        <% end %>
        Air Times: <%= program.air_times %><br />
     </div>
