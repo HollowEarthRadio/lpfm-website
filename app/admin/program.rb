@@ -24,8 +24,8 @@ ActiveAdmin.register Program do
       f.input :external_link
       f.input :archived
       f.input :program_image
-      f.input :users, as: :check_boxes, :collection => Hash[Role.find_by_name("dj").users.map{|b| [b.dj_name,b.id]}]
-    end
+      f.input :users, as: :check_boxes, collection: all_users_with_dj_role(program)
+     end
 
     f.actions do
      f.action :submit
