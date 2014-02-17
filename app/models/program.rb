@@ -17,6 +17,6 @@ class Program < ActiveRecord::Base
       access_key_id:     ENV['S3_KEY'],
       secret_access_key: ENV['S3_SECRET'],
     },
-    styles: { main: "320x320>", medium: "320x240", thumbnail: "50x50!" }
+    styles: { main: "320x320>", medium: "300", thumbnail: "50x50!" }
 
 end
