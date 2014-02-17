@@ -57,38 +57,12 @@
                     We wouldn't be able to make Magma Festival a success without the help of our sponsors. Thanks so much to these rad folks for helping to support Hollow Earth Radio into our glorious future!
                 </p>
                 <ul>
-                <li><a href="http://2020cycle.com">20/20 Cycle</a></li>
-                <li><a href="http://duckhugger.com/">Aerick Duckhugger</a></li>
-                <li><a href="http://www.blackiconictshirts.com/">Black Iconic T-shirts</a></li>
-                <li>the Black Lodge </a>
-                <li><a href="http://www.buttonmakers.net">Buttonmakers</a></li>
-
-                <li><a href="http://www.cwb.org">Center for Wooden Boats</a></li>
-                <li><a href="http://www.centralcoop.com/">Central Co-Op</a></li>
-                <li><a href="http://cmrtyz.com">CMRTYZ</a></li>
-                <li><a href="http://www.daxedworddesign.com">Dax Edword Design</a><li>
-                <li><a href="http://www.jazzalley.com">Dmitriou's Jazz Alley</a></li>
-                <li><a href="http://www.empsfm.org">EMP</a></li>
-                <li><a href="http://essentialbaking.com/">Essential Bakery</a></li>
-                <li><a href="http://www.fulltilticecream.com">Full Tilt</a></li>
-                <li><a href="http://www.grandcentralbakery.com">Grand Central Baking Co</a></li>
-                <li><a href="http://www.grandillusioncinema.org/">Grand Illusion</li></a>
-                <li><a href="http://www.greenmonkeyrecords.com">Green Monkey Records</a></li>
-                <li><a href="http://hothousespa.com/">Hot House Spa</a></li>
-                <li><a href="http://hrtlnd.org">The Heartland</a></li>
-                <li><a href="http://landmarktheatres.com/Market/Seattle/">Landmark Theater Group</a></li>
-                <li><a href="http://seattleghost.com">Market Tours and Espresso</a></li>
-                <li><a href="http://newcitytheater.org/">The New City Theater</a></li>
-                <li><a href="http://www.radarhairandrecords.com/">Radar Records</a></li>
-                <li><a href="http://www.rudysbarbershop.com/">Rudy's Barbershop</a></li>
-                <li><a href="https://www.scarecrow.com/">Scarecrow</a></li>
-                <li><a href="http://www.sonicboomrecords.com/">Sonic Boom</a></li>
-                <li><a href="http://www.subpop.com">Sub Pop Records</a></li>
-                <li><a href="http://www.suicidesqueeze.net">Suicide Squeeze</a></li>
-                <li><a href="http://www.vain.com/">Vain Salon</a></li>
-                <li><a href="http://www.theveraproject.org/">Vera Project</a></li>
-                <li><a href="http://www.waywardmusic.blogspot.com/">Wayward Music Series</a></li>
-
+                    <% @sponsors.each do |sponsor| %>
+                        <li>
+                            <%= link_to sponsor.name, sponsor.link %>
+                        </li>
+                    <% end %>
+                </ul>
 
                 <p>
                     If you would like to become a sponsor for this festival, please email:<br>
