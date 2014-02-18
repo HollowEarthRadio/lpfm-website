@@ -5,8 +5,6 @@ class Program < ActiveRecord::Base
   scope :random,  -> { scheduled.sample }
   scope :current, -> { where(is_broadcasting: true).order("updated_at desc").first }
 
-  #has_attached_file :program_image, styles: { medium: "320x240>", thumbnail: "50x50!" }
-
   has_attached_file :program_image,
     storage: :s3,
     url: ":s3_domain_url",
