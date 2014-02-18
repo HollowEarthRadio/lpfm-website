@@ -5,6 +5,7 @@ LpfmWebsite::Application.routes.draw do
 
   resources :events
   resources :programs
+  resources :users
 
   post 'admin/users/:id/update_role' => 'admin/users#update_role',  :id => /[0-9]+/, as: :admin_update_user_role
 
