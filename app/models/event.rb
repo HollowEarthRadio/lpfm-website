@@ -13,6 +13,6 @@ class Event < ActiveRecord::Base
       access_key_id:     ENV['S3_KEY'],
       secret_access_key: ENV['S3_SECRET'],
     },
-    styles: { cropped: '200x200!' }
+    styles: { cropped: '200x200>' }
 
 end
