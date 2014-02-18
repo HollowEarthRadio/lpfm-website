@@ -3,7 +3,7 @@ class HomeController < ApplicationController
 
   def index
     @program = Program.random
-    @events = Event.public
+    @events = Event.public.order('updated_at DESC')
   end
 
   def splash
