@@ -10,6 +10,12 @@ ActiveAdmin.register_page "Dashboard" do
       end
     end
 
+    div do
+                link_to "Change your password", edit_user_registration_path
+end
+
+
+
     # Here is an example of a simple dashboard with columns and panels.
     #
     # columns do
