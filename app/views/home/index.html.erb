@@ -45,7 +45,7 @@
         <%= link_to image_tag(event.event_image.url(:cropped)), event.event_image.url %>
       </p>
     <p>
-      <%= event.body %>
+      <%= event.body.html_safe %>
     </p>
    </div>
   <% end %>
