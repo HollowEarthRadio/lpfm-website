@@ -28,14 +28,6 @@
 </div>
 
 <p class="leader"></p>
-  <div class="featured">
-    <% if @program.nil? %>
-      NO PROGRAMS YET
-    <% else %>
-      <%= render partial: "featured_show", :locals => { :program => @program } %>
-    <% end %>
-  </div>
-
   <% @events.each do |event| %>
     <div class="featured">
       <h3>
@@ -49,6 +41,14 @@
     </p>
    </div>
   <% end %>
+
+  <div class="featured">
+    <% if @program.nil? %>
+      NO PROGRAMS YET
+    <% else %>
+      <%= render partial: "featured_show", :locals => { :program => @program } %>
+    <% end %>
+  </div>
 
 <div style="clear:both;"></div>
 
