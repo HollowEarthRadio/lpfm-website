@@ -1,7 +1,7 @@
 module ApplicationHelper
 
   def listen_link(title)
-    link_to title, "http://www.loudcity.com/stations/hollow-earth-radio/files/show/listen.html"
+    link_to title, "http://www.streamlicensing.com/stations/hollowearth/listen.html"
   end
 
   def info_mailto
