@@ -22,5 +22,7 @@ LpfmWebsite::Application.routes.draw do
   get '/magma', controller: "home", action: "magma"
   get '/splash', controller: "home", action: "splash"
   get '/listen', to: redirect('http://www.streamlicensing.com/stations/hollowearth/listen.html')
-  root to: 'home', action: 'splash'
+
+  root to: 'home', action: 'index'
+  #root to: 'home', action: 'splash'
 end
