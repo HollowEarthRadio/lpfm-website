@@ -21,7 +21,7 @@ LpfmWebsite::Application.routes.draw do
   get '/theseaportbeat', controller: "home", action: "theseaportbeat"
   get '/magma', controller: "home", action: "magma"
   get '/splash', controller: "home", action: "splash"
-  get '/listen', to: redirect('http://www.streamlicensing.com/stations/hollowearth/listen.html')
+  get '/listen', controller: "home", action: "listen"
 
   root to: 'home', action: 'index'
   #root to: 'home', action: 'splash'
