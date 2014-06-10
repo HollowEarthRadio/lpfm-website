@@ -43,7 +43,7 @@
   <% end %>
 
   <div class="featured">
-    <% if @program.nil? %>
+    <% if @program.nil? || @program.blank? %>
       NO PROGRAMS YET
     <% else %>
       <%= render partial: "featured_show", :locals => { :program => @program } %>

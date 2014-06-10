@@ -16,11 +16,11 @@ LpfmWebsite::Application.routes.draw do
   get "/volunteer", controller: "home", action: 'volunteer'
   get "/submissions", controller: "home", action: 'contribute'
   get "/faq", controller: "home", action: 'faq'
-  get "/shirts", controller: "home", action: 'shirts'
   get "/home", controller: "home", action: 'index'
   get '/theseaportbeat', controller: "home", action: "theseaportbeat"
   get '/magma', controller: "home", action: "magma"
   get '/splash', controller: "home", action: "splash"
+  get '/shirts', to: redirect('http://hollowearthradio.bandcamp.com/merch/')
   get '/listen', controller: "home", action: "listen"
 
   root to: 'home', action: 'index'
