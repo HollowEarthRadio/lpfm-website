@@ -1,7 +1,7 @@
 module ApplicationHelper
 
   def listen_link(title)
-    link_to title, "http://www.streamlicensing.com/stations/hollowearth/listen.html"
+    link_to title, "listen"
   end
 
   def map_link
