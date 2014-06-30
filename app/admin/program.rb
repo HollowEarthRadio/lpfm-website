@@ -2,6 +2,23 @@ ActiveAdmin.register Program do
 
   config.clear_sidebar_sections!
 
+  controller do
+    def update(options={}, &block)
+      update! do |success,failure|
+        success.html do
+          puts "Successful update! #{@program}"
+          redirect_to admin_program_path(@program)
+        end
+        failure.html do
+          puts "not successful #{@program.errors.full_messages.to_sentence}"
+          flash[:error] = @program.errors.full_messages.to_sentence
+          redirect_to admin_edit_program_path(@program)
+        end
+      end
+
+    end
+  end
+
   index do
     column :id
     column :name
