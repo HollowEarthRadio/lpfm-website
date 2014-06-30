@@ -47,6 +47,12 @@
       NO PROGRAMS YET
     <% else %>
       <%= render partial: "featured_show", :locals => { :program => @program } %>
+  </div>
+  <div class="djs">
+    <h3>More Shows</h3>
+      <% Program.scheduled.each do |p| %>
+         <%= link_to image_tag(p.program_image.url(:thumbnail)), program_path(p) if (p.id != @program.id) %>
+      <% end %>
     <% end %>
   </div>
 
