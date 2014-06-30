@@ -9,7 +9,7 @@ class ProgramsController < ApplicationController
 
   def show
     @program = Program.find(params[:id])
-    if @program && @program.twitter_id && (@program.twitter_id.blank? == false)
+    if @program && @program.twitter_id.present?
       @twitter_id = @program.twitter_id
     end
   end
