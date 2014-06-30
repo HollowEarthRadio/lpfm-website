@@ -10,7 +10,7 @@ ActiveAdmin.register Program do
         end
         failure.html do
           flash[:error] = @program.errors.full_messages.to_sentence
-          redirect_to admin_edit_program_path(@program)
+          redirect_to edit_admin_program_path(@program)
         end
       end
 
