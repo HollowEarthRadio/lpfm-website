@@ -3,6 +3,7 @@ class Program < ActiveRecord::Base
 
   validates_format_of :twitter_id, :with => /\A[A-Za-z0-9_]{1,15}\z/,
                                    :allow_nil => true,
+                                   :allow_blank => true,
                                    :message => "id's can only contain the letters (A-Z), numbers (0-9) or underscore. No @ symbols."
 
   scope :scheduled, -> { where(archived: false) }
