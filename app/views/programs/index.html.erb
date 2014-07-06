@@ -11,8 +11,10 @@
    <% else %>
       <div style="float:right;max-width:300px">
    <% end %>
-      <%= link_to image_tag(program.program_image.url(:medium)), program_path(program)  %>
-      <br />
+      <% if program.program_image.exists? %>
+        <%= link_to image_tag(program.program_image.url(:medium)), program_path(program) %>
+        <br />
+      <% end %>
 
        Show Name: <%= link_to program.name, program_path(program) %>
        <br/>
