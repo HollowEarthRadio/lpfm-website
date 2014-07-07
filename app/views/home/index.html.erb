@@ -33,7 +33,7 @@
       <h3>
         <%= event.name %>
       </h3>
-      <% if (event.event_image.exists?) %>
+      <% if event.event_image.exists? %>
       <p>
         <%= link_to image_tag(event.event_image.url(:cropped)), event.event_image.url %>
       </p>
@@ -53,7 +53,7 @@
   <div class="djs">
     <h3>More Shows</h3>
       <% Program.scheduled.each do |p| %>
-        <% if (p.program_image.exists?) %>
+        <% if p.program_image.exists? %>
          <%= link_to image_tag(p.program_image.url(:thumbnail)), program_path(p) if (p.id != @program.id) %>
         <% end %>
       <% end %>

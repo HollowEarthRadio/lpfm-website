@@ -5,7 +5,7 @@
 <% end %>
   <p>
 
-<% if (program.program_image.exists?) %>
+<% if program.program_image.exists? %>
   <%= image_tag program.program_image.url(:medium) %>
 <% end %>
 <span class="featured-title">
