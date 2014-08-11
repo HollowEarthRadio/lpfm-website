@@ -33,12 +33,14 @@
       <h3>
         <%= event.name %>
       </h3>
+      <% if event.event_image.exists? %>
       <p>
         <%= link_to image_tag(event.event_image.url(:cropped)), event.event_image.url %>
       </p>
-    <p>
-      <%= event.body.html_safe %>
-    </p>
+      <% end %>
+      <p>
+	<%= event.body.html_safe %>
+      </p>
    </div>
   <% end %>
 
@@ -47,6 +49,14 @@
       NO PROGRAMS YET
     <% else %>
       <%= render partial: "featured_show", :locals => { :program => @program } %>
+  </div>
+  <div class="djs">
+    <h3>More Shows</h3>
+      <% Program.scheduled.each do |p| %>
+        <% if p.program_image.exists? %>
+         <%= link_to image_tag(p.program_image.url(:thumbnail)), program_path(p) if (p.id != @program.id) %>
+        <% end %>
+      <% end %>
     <% end %>
   </div>
 

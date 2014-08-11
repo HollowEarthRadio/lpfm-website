@@ -5,7 +5,9 @@
 <% end %>
   <p>
 
-<%= image_tag program.program_image.url(:medium) %>
+<% if program.program_image.exists? %>
+  <%= image_tag program.program_image.url(:medium) %>
+<% end %>
 <span class="featured-title">
   <%= link_to program.name, program_path(program) %> <br/>
     <%= program.air_times %><br />
