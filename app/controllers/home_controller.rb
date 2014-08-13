@@ -5,7 +5,7 @@ class HomeController < ApplicationController
 
   def index
     @program = Program.random
-    @events = Event.public.order('updated_at DESC')
+    @events = Event.public.where(start_time: DateTime.now..(DateTime.now + 1.week)).order(start_time: :asc)
   end
 
   def splash

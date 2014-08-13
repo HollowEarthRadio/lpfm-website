@@ -49,3 +49,6 @@ gem 'awesome_print'  # awesome_print, it's awesome! could want in production?
 gem 'paperclip'
 gem 'aws-sdk'
 gem 'foreman'
+
+gem 'koala', '~> 1.10.0rc'
+gem 'rails_autolink'

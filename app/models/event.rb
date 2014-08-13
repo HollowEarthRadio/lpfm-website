@@ -15,4 +15,9 @@ class Event < ActiveRecord::Base
     },
     styles: { cropped: '200x200>' }
 
+  def local_start_time 
+    local_time = self.start_time.in_time_zone(Rails.application.config.time_zone)
+    "#{local_time.strftime('%a %b %e - %l:%M %p')}"
+  end
+  
 end

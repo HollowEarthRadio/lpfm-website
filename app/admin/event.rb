@@ -11,8 +11,13 @@ ActiveAdmin.register Event do
   form do |f|
     f.inputs "Event" do
       f.input :name
+      f.input :start_time, :as => :datetime_picker, :label => 'Start Time', :local => true
+      f.input :location
       f.input :body
       f.input :public
+      f.input :featured
+      f.input :fb_id, :label => 'Facebook Event ID'
+      f.input :fb_image, :label => 'Facebook Image'
       f.input :event_image
     end
 
