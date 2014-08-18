@@ -61,9 +61,9 @@ ActiveRecord::Schema.define(version: 20140812063807) do
     t.datetime "event_image_updated_at"
     t.boolean  "featured"
     t.datetime "start_time"
+    t.boolean  "no_start_time",            default: true
     t.string   "location"
     t.string   "fb_id"
-    t.string   "fb_image"
   end
 
   create_table "magma_shows", force: true do |t|

@@ -5,7 +5,9 @@ class HomeController < ApplicationController
 
   def index
     @program = Program.random
-    @events = Event.public.where(start_time: DateTime.now..(DateTime.now + 1.week)).order(start_time: :asc)
+    @featured_events = Event.featured.where('start_time > ?', DateTime.now)
+    @dated_events = Event.public.where(start_time: DateTime.now..(DateTime.now+1.week)).order(start_time: :asc)
+    @static_events = Event.static
   end
 
   def splash

@@ -1,5 +1,7 @@
 class Event < ActiveRecord::Base
-  scope :public, -> { where(public: true) }
+  scope :featured, -> { where(public: true, featured: true) }
+  scope :public, -> { where(public: true, no_start_time: false) }
+  scope :static, -> { where(public: true, no_start_time: true) }
 
   #has_attached_file :event_image, styles: { cropped: '200x200!' }
 

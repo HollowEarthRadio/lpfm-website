@@ -28,23 +28,14 @@
 </div>
 
 <p class="leader"></p>
-  <% @events.each do |event| %>
-    <div class="featured">
-      <% if event.fb_id.present? %>
-        <h3><%= facebook_event_link event.name, event.fb_id %></h3>
-        <% if event.fb_image.present? %>
-          <p><%= facebook_event_link image_tag(event.fb_image), event.fb_id %></p>
-        <% end %>
-      <% else %>
-        <h3><%= event.name %></h3>
-        <% if event.event_image.exists? %>
-           <p><%= link_to image_tag(event.event_image.url(:cropped)), event.event_image.url %></p>
-        <% end %>
-      <% end %>
-      <h4><%= event.local_start_time %></h4>
-      <p><%= auto_link event.body.html_safe %></p>
-    </div>
+  <% @dated_events.each do |event| %>
+    <%= render partial: "event", :locals => { :event => event } %>
   <% end %>
+
+  <% @static_events.each do |event| %>
+    <%= render partial: "event", :locals => { :event => event } %>
+  <% end %>
+
 
   <div class="featured">
     <% if @program.nil? || @program.blank? %>

@@ -23,8 +23,7 @@ puts "obtained file lock... starting facebook api calls...\n"
 ##################
 # FACEBOOK ACCESS
 ##################
-config = YAML::load(File.open(Rails.root.join('config','facebook.yml')));
-oauth_app = Koala::Facebook::OAuth.new(config['production']['app_id'], config['production']['app_secret']);
+oauth_app = Koala::Facebook::OAuth.new(ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET']);
 access_token = oauth_app.get_app_access_token;
 koala_api = Koala::Facebook::API.new(access_token);
 
@@ -35,7 +34,7 @@ puts "\nSearching for dirty events..."
 
 fb_events.each do |e|
   ie = koala_api.get_object(e["id"]);
-  picture = koala_api.get_picture(e["id"], { type: "large" });
+  fb_picture_url = koala_api.get_picture(e["id"], { type: "large" });
 
   edatabase = Event.where(:fb_id => ie["id"]).first;
   if edatabase
@@ -47,7 +46,7 @@ fb_events.each do |e|
       edatabase.location = ie["location"]
       edatabase.body = ie["description"].gsub!('\n', '<br>')
       edatabase.fb_id = ie["id"]
-      edatabase.fb_image = picture
+      edatabase.event_image = open(fb_picture_url)
       edatabase.save
       puts "***updated "+edatabase.name
     else 
@@ -57,11 +56,12 @@ fb_events.each do |e|
     puts "***database entry not found, adding to database "+ie["name"]
     edatabase = Event.new( :name => ie["name"], 
                            :start_time => ie["start_time"].to_datetime,
+                           :no_start_time => false,
                            :location => ie["location"],
                            :body => ie["description"].gsub("\n", "<br>"),
                            :public => true,
                            :fb_id => ie["id"],
-                           :fb_image => picture )
+                           :event_image => open(fb_picture_url) )
     edatabase.save
     puts "***saved "+edatabase.name
   end
