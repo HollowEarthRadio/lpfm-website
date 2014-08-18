@@ -1,9 +1,0 @@
-development: &defaults
-  app_id: 
-  app_secret: 
-
-test:
-  <<: *defaults
-
-production:
-  <<: *defaults

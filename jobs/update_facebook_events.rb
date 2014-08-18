@@ -60,6 +60,7 @@ fb_events.each do |e|
                            :location => ie["location"],
                            :body => ie["description"].gsub("\n", "<br>"),
                            :public => true,
+                           :featured => false,
                            :fb_id => ie["id"],
                            :event_image => open(fb_picture_url) )
     edatabase.save
