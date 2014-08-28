@@ -39,6 +39,8 @@ LpfmWebsite::Application.configure do
     template/*
     application.js
     active_admin.js.coffee
+    airtime.js
+    jquery.showinfo.js
     bookman_600.font.js
     cufon-yui.js
     pollstation.js
@@ -49,6 +51,7 @@ LpfmWebsite::Application.configure do
     her.css
     hollow.css
     active-admin.css
+    airtime-widgets.css
   )
 
   # Specifies the header that your server uses for sending files.
