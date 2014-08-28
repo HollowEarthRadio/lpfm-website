@@ -2,25 +2,10 @@ var ready;
 ready = function() {
   var HERDomain = "https://hollowearth.airtime.pro/";
 
-  $("#onAirToday").airtimeShowSchedule({
-    sourceDomain: HERDomain,
-    updatePeriod: 120
-  });
-
-  $("#headerLiveHolder").airtimeLiveInfo({
-    sourceDomain: HERDomain,
-    updatePerios: 120
-  });
-
   $("#currentShow").airtimeCurrentShow({
     sourceDomain: HERDomain,
     text: { offline:"Offline", current:"Current Show", next:"Up Next" },
-    updatePeriod: 30
-  });
-
-  $("#headerLiveTrackHolder").airtimeLiveTrackInfo({
-    sourceDomain: HERDomain,
-    updatePeriod: 30
+    updatePeriod: 600
   });
 
   $("#scheduleTabs").airtimeWeekSchedule({
