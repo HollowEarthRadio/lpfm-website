@@ -59,15 +59,17 @@
     <% else %>
       <%= render partial: "featured_show", :locals => { :program => @program } %>
   </div>
+
+  <!-- hide
   <div class="djs">
     <h3>More Shows</h3>
-      <% Program.scheduled.each do |p| %>
-        <% if p.program_image.exists? %>
-         <%= link_to image_tag(p.program_image.url(:thumbnail)), program_path(p) if (p.id != @program.id) %>
-        <% end %>
-      <% end %>
-    <% end %>
-  </div>
+      <%# @scheduled.each do |p| %>
+        <%# if p.program_image.exists? %>
+         <%#= link_to image_tag(p.program_image.url(:thumbnail)), program_path(p) if (p.id != @program.id) %>
+        <%# end %>
+      <%# end %>
+    <%# end %>
+  </div> -->
 
 <div style="clear:both;"></div>
 

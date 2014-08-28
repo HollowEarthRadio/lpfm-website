@@ -6,6 +6,7 @@ class HomeController < ApplicationController
   def index
     @program = Program.random
     @events = Event.public.order('updated_at DESC')
+    @scheduled = Program.scheduled
   end
 
   def splash
