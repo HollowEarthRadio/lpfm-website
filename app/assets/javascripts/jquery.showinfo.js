@@ -27,7 +27,7 @@
             tableString += "<h3>" + options.text.onAirToday + "</h3>";
             tableString += "<table width='100%' border='0' cellspacing='0' cellpadding='0' class='widget widget now-playing-list small'>"+
                 "<tbody>";
-            
+
             for (var i=0; i<shows.length; i++){
                 tableString +=
                 "<tr>" +
@@ -38,10 +38,10 @@
                     tableString += "<td><a href='" + shows[i].getURL() + "'>" + shows[i].getName() + "</a></td></tr>";
                 } else {
                     tableString += "<td>" + shows[i].getName() + "</td></tr>";
-                }  
+                }
             }
             tableString += "</tbody></table>";
-            
+
             obj.empty();
             obj.append(tableString);
         }
@@ -56,12 +56,12 @@
         }
 
         function getServerData(){
-            $.ajax({url: options.sourceDomain + "api/live-info/", 
-                    data: {type:"endofday",limit: options.showLimit}, 
-                    dataType: "jsonp", 
+            $.ajax({url: options.sourceDomain + "api/live-info/",
+                    data: {type:"endofday",limit: options.showLimit},
+                    dataType: "jsonp",
                     success:function(data) {
                         processData(data);
-                    }, 
+                    },
                     error: airtimeScheduleJsonpError});
             setTimeout(getServerData, options.updatePeriod*1000);
         }
@@ -78,7 +78,7 @@
         sourceDomain: "http://localhost/", //where to get show status from
         text: {onAirNow:"On Air Now", offline:"Offline", current:"Current", next:"Next"}
     };
-    options = $.extend(true, defaults, options);    
+    options = $.extend(true, defaults, options);
     options.sourceDomain = addEndingBackslash(options.sourceDomain);
 
     return this.each(function() {
@@ -94,7 +94,7 @@
             if (sd == null){
                 return;
             }
-            
+
             var currentShow = sd.getCurrentShow();
             var nextShows = sd.getNextShows();
 
@@ -139,12 +139,12 @@
         }
 
         function getServerData(){
-            $.ajax({url: options.sourceDomain + "api/live-info/", 
-                    data: {type:"interval",limit:"5"}, 
-                    dataType: "jsonp", 
+            $.ajax({url: options.sourceDomain + "api/live-info/",
+                    data: {type:"interval",limit:"5"},
+                    dataType: "jsonp",
                     success: function(data) {
                         processData(data);
-                    }, 
+                    },
                     error: airtimeScheduleJsonpError});
             setTimeout(getServerData, options.updatePeriod*1000);
         }
@@ -160,7 +160,7 @@
            sourceDomain: "http://localhost/", //where to get show status from
            text: {onAirNow:"On Air Now", offline:"Offline", current:"Current", next:"Next"}
        };
-       options = $.extend(true, defaults, options);    
+       options = $.extend(true, defaults, options);
        options.sourceDomain = addEndingBackslash(options.sourceDomain);
 
        return this.each(function() {
@@ -175,7 +175,7 @@
                if (sd == null){
                    return;
                }
-               
+
                var currentShow = sd.getCurrentShow();
                var nextShows = sd.getNextShows();
 
@@ -206,7 +206,7 @@
                        "<span class='current' id='time-remaining' class='time-remaining'>"+timeRemaining+"</span>");
                obj.append("<ul class='widget now-playing-bar'>" +
                    "<li class='current track-metadata'>"+options.text.current+": "+sd.currentTrack.getTitle()+"</li>" +
-                   "<li class='next track-metadata'>"+options.text.next+": "+sd.nextTrack.getTitle()+"</span></li>" +                   
+                   "<li class='next track-metadata'>"+options.text.next+": "+sd.nextTrack.getTitle()+"</span></li>" +
                    "</ul>");
            }
 
@@ -219,12 +219,12 @@
            }
 
            function getServerData(){
-               $.ajax({url: options.sourceDomain + "api/live-info/", 
-                       data: {type:"interval",limit:"5"}, 
-                       dataType: "jsonp", 
+               $.ajax({url: options.sourceDomain + "api/live-info/",
+                       data: {type:"interval",limit:"5"},
+                       dataType: "jsonp",
                        success: function(data) {
                            processData(data);
-                       }, 
+                       },
                        error: airtimeScheduleJsonpError});
                setTimeout(getServerData, options.updatePeriod*1000);
            }
@@ -243,14 +243,14 @@
     };
     options = $.extend(true, defaults, options);
     options.sourceDomain = addEndingBackslash(options.sourceDomain);
-    
+
     return this.each(function() {
         var obj = $(this);
         obj.empty();
 
         obj.attr("class", "ui-tabs");
 
-				var dow = ["monday", "tuesday", "wednesday", "thursday", "friday","saturday", "sunday"];
+        var dow = ["monday", "tuesday", "wednesday", "thursday", "friday","saturday", "sunday"];
 
         var date = new Date();
         //subtract 1 because javascript date function returns
@@ -273,7 +273,7 @@
 
         function updateWidget(data){
             for (var i=0; i<dow.length; i++){
-                var html = 
+                var html =
                   '<table class="widget widget now-playing-list">'+
                     '<colgroup>'+
                       '<col width="150" />'+
@@ -312,7 +312,7 @@
                 html +=
                     '</tbody>'+
                   '</table>';
-                  
+
                 $("#"+dow[i]).empty();
                 $("#"+dow[i]).append(html);
             }
@@ -344,7 +344,7 @@
         sourceDomain: "http://localhost/", //where to get show status from
         text: {offline:"Offline", current:"Current", next:"Next"}
     };
-    options = $.extend(true, defaults, options);    
+    options = $.extend(true, defaults, options);
     options.sourceDomain = addEndingBackslash(options.sourceDomain);
 
     return this.each(function() {
@@ -360,57 +360,57 @@
             if (sd == null){
                 return;
             }
-            
+
             var currentShow = sd.getCurrentShow();
             var nextShows = sd.getNextShows();
 
             var currentShowName = "";
-	    var currentShowURL = "";
+      var currentShowURL = "";
             var currentShowRange = "";
 
             var nextShowName = "";
-	    var nextShowURL = "";
+      var nextShowURL = "";
             var nextShowRange = "";
 
             if (currentShow.length > 0){
                 currentShowName = currentShow[0].getName();
-		currentShowURL = currentShow[0].getURL();
+    currentShowURL = currentShow[0].getURL();
                 currentShowRange = currentShow[0].getRange();
             }
 
             if (nextShows.length > 0){
                 nextShowName = nextShows[0].getName();
-		nextShowURL = nextShows[0].getURL();
+    nextShowURL = nextShows[0].getURL();
                 nextShowRange = nextShows[0].getRange();
             }
 
-	    var outputString = ""
-	    if (currentShow.length == 0) {
-		outputString += "<h4>"+options.text.offline+" &gt;&gt;</h4>";
-	    }
+      var outputString = ""
+      if (currentShow.length == 0) {
+    outputString += "<h4>"+options.text.offline+" &gt;&gt;</h4>";
+      }
 
-	    outputString += "<ul class='widget now-playing-bar'>" +
-		"<li class='current'>";
-	    
-	    if (currentShowURL.length > 0) {
-		outputString += "<a href='"+currentShowURL+"'>"+currentShowName+"</a></li>";
-	    } else {
-		outputString += currentShowName;
-	    }
+      outputString += "<ul class='widget now-playing-bar'>" +
+    "<li class='current'>";
 
-	    outputString += "<li class='current'><span>"+currentShowRange+"</span></li>";
-	    outputString += "<li class='next'>"+options.text.next+": ";
+      if (currentShowURL.length > 0) {
+    outputString += "<a href='"+currentShowURL+"'>"+currentShowName+"</a></li>";
+      } else {
+    outputString += currentShowName;
+      }
 
-	    if (nextShowURL.length > 0) {
-		outputString += "<a href='"+nextShowURL+"'>"+nextShowName+"</a>";
-	    } else {
-		outputString += nextShowName;
-	    }
+      outputString += "<li class='current'><span>"+currentShowRange+"</span></li>";
+      outputString += "<li class='next'>"+options.text.next+": ";
 
-	    outputString += "<span>"+nextShowRange+"</span></li>" + "</ul>";
+      if (nextShowURL.length > 0) {
+    outputString += "<a href='"+nextShowURL+"'>"+nextShowName+"</a>";
+      } else {
+    outputString += nextShowName;
+      }
 
-	    obj.empty();
-	    obj.append(outputString);
+      outputString += "<span>"+nextShowRange+"</span></li>" + "</ul>";
+
+      obj.empty();
+      obj.append(outputString);
         }
 
         function processData(data){
@@ -422,12 +422,12 @@
         }
 
         function getServerData(){
-            $.ajax({url: options.sourceDomain + "api/live-info/", 
-                    data: {type:"interval",limit:"5"}, 
-                    dataType: "jsonp", 
+            $.ajax({url: options.sourceDomain + "api/live-info/",
+                    data: {type:"interval",limit:"5"},
+                    dataType: "jsonp",
                     success: function(data) {
                         processData(data);
-                    }, 
+                    },
                     error: airtimeScheduleJsonpError});
             setTimeout(getServerData, options.updatePeriod*1000);
         }
@@ -460,7 +460,7 @@ function ScheduleData(data){
             this.nextShows[i] = new Show(data.nextShow[i]);
         }
     }
-    
+
     this.currentTrack = new AudioTrack(data.current);
     this.nextTrack = new AudioTrack(data.next);
 
@@ -535,15 +535,15 @@ AudioTrack.prototype.getTitle = function(){
 function getTime(timestamp) {
     var time = timestamp.split(" ")[1].split(":");
     var ampm = "AM"
-   
+
     if (time[0] == 0) {
-	time[0] = 12;
+  time[0] = 12;
     } else if (time[0] >= 12) {
-	ampm = "PM";
-	if (time[0] > 12) {
-	    time[0] = time[0] - 12;
-	}
-    } 
+  ampm = "PM";
+  if (time[0] > 12) {
+      time[0] = time[0] - 12;
+  }
+    }
 
     return time[0] + ":" + time[1] + " " + ampm;
 };
@@ -551,30 +551,30 @@ function getTime(timestamp) {
 /* Takes an input parameter of milliseconds and converts these into
  * the format HH:MM:SS */
 function convertToHHMMSS(timeInMS){
-	var time = parseInt(timeInMS);
+  var time = parseInt(timeInMS);
 
-	var hours = parseInt(time / 3600000);
-	time -= 3600000*hours;
+  var hours = parseInt(time / 3600000);
+  time -= 3600000*hours;
 
-	var minutes = parseInt(time / 60000);
-	time -= 60000*minutes;
+  var minutes = parseInt(time / 60000);
+  time -= 60000*minutes;
 
-	var seconds = parseInt(time / 1000);
+  var seconds = parseInt(time / 1000);
 
-	hours = hours.toString();
-	minutes = minutes.toString();
-	seconds = seconds.toString();
+  hours = hours.toString();
+  minutes = minutes.toString();
+  seconds = seconds.toString();
 
-	if (hours.length == 1)
-		hours = "0" + hours;
-	if (minutes.length == 1)
-		minutes = "0" + minutes;
-	if (seconds.length == 1)
-		seconds = "0" + seconds;
-	if (hours == "00")
-		return minutes + ":" + seconds;
-	else
-		return hours + ":" + minutes + ":" + seconds;
+  if (hours.length == 1)
+    hours = "0" + hours;
+  if (minutes.length == 1)
+    minutes = "0" + minutes;
+  if (seconds.length == 1)
+    seconds = "0" + seconds;
+  if (hours == "00")
+    return minutes + ":" + seconds;
+  else
+    return hours + ":" + minutes + ":" + seconds;
 }
 
 /* Takes in a string of format similar to 2011-02-07 02:59:57,
@@ -585,11 +585,11 @@ function convertDateToPosixTime(s){
     var date = datetime[0].split("-");
     var time = datetime[1].split(":");
 
-	var year = date[0];
-	var month = date[1];
-	var day = date[2];
-	var hour = time[0];
-	var minute = time[1];
+  var year = date[0];
+  var month = date[1];
+  var day = date[2];
+  var hour = time[0];
+  var minute = time[1];
     var sec = 0;
     var msec = 0;
 
@@ -600,7 +600,7 @@ function convertDateToPosixTime(s){
     } else
         sec = time[2];
 
-	return Date.UTC(year, month-1, day, hour, minute, sec, msec);
+  return Date.UTC(year, month-1, day, hour, minute, sec, msec);
 }
 
 /* Checks the incomming data's widget version tag.
@@ -610,12 +610,12 @@ function convertDateToPosixTime(s){
 *     -If the value is less then 1 warn the user that they should upgrade the javascript to a newer version.
 */
 function checkWidgetVersion(data){
-   
+
     var airtimeServerWidgetVersion = data['AIRTIME_API_VERSION'];
-    
+
     if (undefined === airtimeServerWidgetVersion || airtimeServerWidgetVersion >  AIRTIME_API_VERSION )
         throw "The version of widgets you are using is out of date with the Airtime installation, please update your widgets javascript file. (Airtime widget API version is "+airtimeServerWidgetVersion+", this widget's API version is "+AIRTIME_API_VERSION+")";
     else if (airtimeServerWidgetVersion < AIRTIME_API_VERSION )
         throw "The Airtime server has a different version than this widget supports. Please get the correct widget version for your Airtime installation. (Airtime widget API version is "+airtimeServerWidgetVersion+", this widget's API version is "+AIRTIME_API_VERSION+")";
-    
+
 }
