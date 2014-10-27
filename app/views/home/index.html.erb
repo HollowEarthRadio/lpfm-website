@@ -61,7 +61,7 @@
     <% end %>
   </div>
 
-  <% cache ["megamart/artists/show", @releases] do %>
+  <% cache ["home/index/scheduled", @scheduled] do %>
     <div class="djs">
       <h3>More Shows</h3>
         <% @scheduled.each do |p| %>
