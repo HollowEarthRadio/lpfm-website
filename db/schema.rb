@@ -59,7 +59,7 @@ ActiveRecord::Schema.define(version: 20140812063807) do
     t.string   "event_image_content_type"
     t.integer  "event_image_file_size"
     t.datetime "event_image_updated_at"
-    t.boolean  "featured"
+    t.boolean  "featured",                 default: false
     t.datetime "start_time"
     t.boolean  "no_start_time",            default: true
     t.string   "location"
