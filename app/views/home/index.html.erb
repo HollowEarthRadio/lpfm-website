@@ -61,15 +61,16 @@
     <% end %>
   </div>
 
-  <!-- <div class="djs">
-    <h3>More Shows</h3>
-      <%# @scheduled.each do |p| %>
-        <%# if p.program_image.exists? %>
-         <%#= link_to image_tag(p.program_image.url(:thumbnail)), program_path(p) if (p.id != @program.id) %>
-        <%# end %>
-      <%# end %>
-  </div>
- -->
+  <% cache ["megamart/artists/show", @releases] do %>
+    <div class="djs">
+      <h3>More Shows</h3>
+        <% @scheduled.each do |p| %>
+          <% if p.program_image.exists? %>
+           <%= link_to image_tag(p.program_image.url(:thumbnail)), program_path(p) if (p.id != @program.id) %>
+          <% end %>
+        <% end %>
+    </div>
+  <% end %>
 <div style="clear:both;"></div>
 
 
