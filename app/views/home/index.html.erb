@@ -37,27 +37,31 @@
 </div>
 
 <p class="leader"></p>
-  <% @events.each do |event| %>
-    <div class="featured">
-      <h3>
-        <%= event.name %>
-      </h3>
-      <% if event.event_image.exists? %>
-      <p>
-        <%= link_to image_tag(event.event_image.url(:cropped)), event.event_image.url %>
-      </p>
-      <% end %>
-      <p>
-	<%= event.body.html_safe %>
-      </p>
-   </div>
+  <% cache ["home/index/events", @events] do %>
+    <% @events.each do |event| %>
+      <div class="featured">
+        <h3>
+          <%= event.name %>
+        </h3>
+        <% if event.event_image.exists? %>
+        <p>
+          <%= link_to image_tag(event.event_image.url(:cropped)), event.event_image.url %>
+        </p>
+        <% end %>
+        <p>
+    <%= event.body.html_safe %>
+        </p>
+     </div>
+    <% end %>
   <% end %>
 
   <div class="featured">
-    <% if @program.nil? || @program.blank? %>
-      NO PROGRAMS YET
-    <% else %>
-      <%= render partial: "featured_show", :locals => { :program => @program } %>
+    <% cache ["home/index/featured", @program] do %>
+      <% if @program.nil? || @program.blank? %>
+        NO PROGRAMS YET
+      <% else %>
+        <%= render partial: "featured_show", :locals => { :program => @program } %>
+      <% end %>
     <% end %>
   </div>
 
