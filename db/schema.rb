@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140612034210) do
+ActiveRecord::Schema.define(version: 20140812063807) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,6 +59,11 @@ ActiveRecord::Schema.define(version: 20140612034210) do
     t.string   "event_image_content_type"
     t.integer  "event_image_file_size"
     t.datetime "event_image_updated_at"
+    t.boolean  "featured",                 default: false
+    t.datetime "start_time"
+    t.boolean  "no_start_time",            default: true
+    t.string   "location"
+    t.string   "fb_id"
   end
 
   create_table "magma_shows", force: true do |t|
