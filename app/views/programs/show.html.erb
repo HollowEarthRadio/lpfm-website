@@ -1,29 +1,32 @@
-<div class="program-image">
-    <%= image_tag @program.program_image.url(:medium) %>
-</div>
-<div class="program-info">
-    <h2>
-        <%= @program.name %>
-    </h2>
-    <p>
-        <%= link_to 'Browse All Shows', programs_path, :class => 'tinylink' %> |
-        <%= link_to 'Browse the Schedule', {:controller => 'home', :action => 'schedule'}, :class => 'tinylink' %>
-    </p>
-    <p>
-        <br/>
-        <% @program.users.each do |dj| %>
-             <%= dj.dj_name %><br/>
-        <% end %>
-        <br/>
+<% cache ["programs/show", @program] do %>
+    <div class="program-image">
+        <%= image_tag @program.program_image.url(:medium) %>
+    <% end %>
+    </div>
+    <div class="program-info">
+        <h2>
+            <%= @program.name %>
+        </h2>
+        <p>
+            <%= link_to 'Browse All Shows', programs_path, :class => 'tinylink' %> |
+            <%= link_to 'Browse the Schedule', {:controller => 'home', :action => 'schedule'}, :class => 'tinylink' %>
+        </p>
+        <p>
+            <br/>
+            <% @program.users.each do |dj| %>
+                 <%= dj.dj_name %><br/>
+            <% end %>
+            <br/>
 
-        <strong>Air Times:</strong>
-        <%= @program.air_times %><br/>
+            <strong>Air Times:</strong>
+            <%= @program.air_times %><br/>
 
-    </p>
-    <% unless @program.external_link.nil? or @program.external_link_name.nil? or @program.external_link.empty? or @program.external_link_name.empty? %>
-         <strong>Website:</strong> <%= link_to @program.external_link_name, @program.external_link %> <% end %><br>
-    <strong>Description:</strong>
-    <p style="margin-top:5px;">
-        <%= @program.description %>
-    </p>
-</div>
+        </p>
+        <% unless @program.external_link.nil? or @program.external_link_name.nil? or @program.external_link.empty? or @program.external_link_name.empty? %>
+             <strong>Website:</strong> <%= link_to @program.external_link_name, @program.external_link %> <% end %><br>
+        <strong>Description:</strong>
+        <p style="margin-top:5px;">
+            <%= @program.description.html_safe %>
+        </p>
+    </div>
+<% end %>
