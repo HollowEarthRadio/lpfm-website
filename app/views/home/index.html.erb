@@ -1,22 +1,31 @@
 <div id="recently_played">
-  <h3>Hollow Earth is currently playing:</h3>
 
-  <h2><div id="currentsong"></div></h2>
-  <br/>
-      <table>
-      <tr><th>Recently Played Songs</th></tr>
-      <tr><td><span id="prevsong1"></span></td></tr>
-      <tr><td><span id="prevsong2"></span></td></tr>
-      <tr><td><span id="prevsong3"></span></td></tr>
-      <tr><td><span id="prevsong4"></span></td></tr>
-      <tr><td><span id="prevsong5"></span></td></tr>
-      <tr><td><span id="prevsong6"></span></td></tr>
-      <tr><td><span id="prevsong7"></span></td></tr>
-      <tr><td><span id="prevsong8"></span></td></tr>
-      <tr><td><span id="prevsong9"></span></td></tr>
-      <tr><td><span id="prevsong10"></span></td></tr>
-      </table>
-</div><!-- This will update our 'recently played' box -->
+  <iframe id="ListFrame" name="ListFrame" style="width:415px; height:60px; border:none;" scrolling="no";
+      src="http://www.boontdusties.com/specialhollow/flashradio/index.html">]
+  </iframe>
+
+  <div style="padding-left:10px">
+    <div id="currentShow"></div>
+    <br/>
+
+    <br/>
+        <table>
+        <tr><th style="text-decoration: underline;">Recently Played Songs</th></tr>
+        <tr><td><span id="prevsong1"></span></td></tr>
+        <tr><td><span id="prevsong2"></span></td></tr>
+        <tr><td><span id="prevsong3"></span></td></tr>
+        <tr><td><span id="prevsong4"></span></td></tr>
+        <tr><td><span id="prevsong5"></span></td></tr>
+        <tr><td><span id="prevsong6"></span></td></tr>
+        <tr><td><span id="prevsong7"></span></td></tr>
+        <tr><td><span id="prevsong8"></span></td></tr>
+        <tr><td><span id="prevsong9"></span></td></tr>
+        <tr><td><span id="prevsong10"></span></td></tr>
+        </table>
+
+  </div><!-- This will update our 'recently played' box -->
+</div>
+
 
 <div>
   <h2>
@@ -38,21 +47,25 @@
 
 
   <div class="featured">
-    <% if @program.nil? || @program.blank? %>
-      NO PROGRAMS YET
-    <% else %>
-      <%= render partial: "featured_show", :locals => { :program => @program } %>
-  </div>
-  <div class="djs">
-    <h3>More Shows</h3>
-      <% Program.scheduled.each do |p| %>
-        <% if p.program_image.exists? %>
-         <%= link_to image_tag(p.program_image.url(:thumbnail)), program_path(p) if (p.id != @program.id) %>
-        <% end %>
+    <% cache ["home/index/featured", @program] do %>
+      <% if @program.nil? || @program.blank? %>
+        NO PROGRAMS YET
+      <% else %>
+        <%= render partial: "featured_show", :locals => { :program => @program } %>
       <% end %>
     <% end %>
   </div>
 
+  <% cache ["home/index/scheduled", @scheduled] do %>
+    <div class="djs">
+      <h3>More Shows</h3>
+        <% @scheduled.each do |p| %>
+          <% if p.program_image.exists? %>
+           <%= link_to image_tag(p.program_image.url(:thumbnail)), program_path(p) if (p.id != @program.id) %>
+          <% end %>
+        <% end %>
+    </div>
+  <% end %>
 <div style="clear:both;"></div>
 
 

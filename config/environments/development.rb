@@ -43,6 +43,6 @@ LpfmWebsite::Application.configure do
     hollow.css
     active-admin.css.scss
   )
-  config.assets.digest = true
+  config.assets.digest = false
   config.assets.compress = true
 end

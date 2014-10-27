@@ -52,3 +52,6 @@ gem 'foreman'
 
 gem 'koala', '~> 1.10.0rc'
 gem 'rails_autolink'
+
+gem 'dalli'
+gem 'memcachier'

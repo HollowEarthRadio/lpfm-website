@@ -39,6 +39,8 @@ LpfmWebsite::Application.configure do
     template/*
     application.js
     active_admin.js.coffee
+    airtime.js
+    jquery.showinfo.js
     bookman_600.font.js
     cufon-yui.js
     pollstation.js
@@ -49,6 +51,7 @@ LpfmWebsite::Application.configure do
     her.css
     hollow.css
     active-admin.css
+    airtime-widgets.css
   )
 
   # Specifies the header that your server uses for sending files.
@@ -69,6 +72,7 @@ LpfmWebsite::Application.configure do
 
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
+  config.cache_store = :dalli_store
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.action_controller.asset_host = "http://assets.example.com"
