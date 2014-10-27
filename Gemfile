@@ -49,3 +49,6 @@ gem 'awesome_print'  # awesome_print, it's awesome! could want in production?
 gem 'paperclip'
 gem 'aws-sdk'
 gem 'foreman'
+
+gem 'dalli'
+gem 'memcachier'
