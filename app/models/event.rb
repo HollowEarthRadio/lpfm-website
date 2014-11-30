@@ -5,6 +5,7 @@ class Event < ActiveRecord::Base
   scope :not_featured,  -> { where.not(featured: true) }
   scope :static,        -> { where(no_start_time: true).public }
   scope :this_week,     -> { where(start_time: DateTime.now..(DateTime.now+1.week)) }
+  scope :next_week,     -> { where(start_time: (DateTime.now+1.week)..(DateTime.now+2.weeks)) }
 
   #has_attached_file :event_image, styles: { cropped: '200x200!' }
 
@@ -20,9 +21,16 @@ class Event < ActiveRecord::Base
     },
     styles: { cropped: '200x200>' }
 
+  def local_time
+    self.start_time.in_time_zone(Rails.application.config.time_zone)
+  end
+
   def local_start_time
-    local_time = self.start_time.in_time_zone(Rails.application.config.time_zone)
-    "#{local_time.strftime('%a %b %e - %l:%M %p')}"
+    "#{self.local_time.strftime('%a %b %e - %l:%M %p')}"
+  end
+
+  def local_start_date
+    "#{self.local_time.strftime('%a %b %e')}"
   end
 
 end
