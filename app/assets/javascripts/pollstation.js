@@ -42,7 +42,7 @@ function pollstation() {
         s_info=lines[1].split(" - ");
 
         //remove the artist from the title
-        title=jQuery.trim(s_info[1]);
+        title=jQuery.trim(s_info[0]);
 
         //remove the year from the title
         year = s_info[1]
@@ -63,11 +63,18 @@ function pollstation() {
 
 
         //update the current artist and song title
-        jQuery('#currentsong').html(jQuery.trim(cleantitle) + '<br /><em>' + jQuery.trim(s_info[0]) + '</em><br />' + jQuery.trim(new_year));
+        if ((title != '') || (cleantitle != ''))
+	{
+            jQuery('#currentsong').html(title + ' - ' + cleantitle);
+	}
 
         //update the previously played songs
         for (var i = 1; i <= 10; i++) {
-            jQuery('#prevsong' + i).html(lines[i + 1]);
+	    cleanline = jQuery.trim(lines[i + 1]);
+	    if (cleanline != null)
+	    {
+		jQuery('#prevsong' + i).html(cleanline);
+	    }
         }
     } );
 }
