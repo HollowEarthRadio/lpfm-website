@@ -11,6 +11,7 @@
     <br/>
         <table>
         <tr><th style="text-decoration: underline;">Recently Played Songs</th></tr>
+        <tr><td><b><span id="currentsong"></span></b></td></tr>
         <tr><td><span id="prevsong1"></span></td></tr>
         <tr><td><span id="prevsong2"></span></td></tr>
         <tr><td><span id="prevsong3"></span></td></tr>
@@ -37,17 +38,22 @@
 </div>
 
 <p class="leader"></p>
-  <% @featured_events.each do |event| %>
-    <%= render partial: "event", :locals => { :event => event } %>
+  <%= render partial: "event", collection: @featured_events %>
+
+  <% unless @current_events.empty? %>
+    <%= render partial: "event", collection: @current_events %>
+
+    <% unless @future_events.empty? %>
+      <div class="featured">
+      <h3>Future events:</h3>
+        <%= render partial: "future_event", collection: @future_events %>
+      </div>
+    <% end %>
+  <% else %>
+    <%= render partial: "event", collection: @future_events %>
   <% end %>
 
-  <% @dated_events.each do |event| %>
-    <%= render partial: "event", :locals => { :event => event } %>
-  <% end %>
-
-  <% @static_events.each do |event| %>
-    <%= render partial: "event", :locals => { :event => event } %>
-  <% end %>
+  <% render partial: "event", collection: @static_events %>
 
   <div class="featured">
     <% cache ["home/index/featured", @program] do %>
