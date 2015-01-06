@@ -56,6 +56,13 @@
   <% render partial: "event", collection: @static_events %>
 
   <div class="featured">
+    <h3>Hollow Earth Chat</h3>
+    <p>
+      <script id="cid0020000081517256527" data-cfasync="false" async src="//st.chatango.com/js/gz/emb.js" style="width: 640px;height: 320px;">{"handle":"her-fm","arch":"js","styles":{"a":"bda593","b":100,"c":"000000","d":"000000","e":"c5b197","h":"c5b197","k":"FF6600","l":"FF6600","m":"FF6600","q":"FF6600","r":100,"sbc":"bda593","cnrs":"0.6"}}</script>
+    </p>
+  </div>
+
+  <div class="featured">
     <% cache ["home/index/featured", @program] do %>
       <% if @program.nil? || @program.blank? %>
         NO PROGRAMS YET
@@ -63,10 +70,6 @@
         <%= render partial: "featured_show", :locals => { :program => @program } %>
       <% end %>
     <% end %>
-  </div>
-
-  <div>
-    <script id="cid0020000081514900745" data-cfasync="false" async src="//st.chatango.com/js/gz/emb.js" style="width: 450px;height: 280px;">{"handle":"her-fm","arch":"js","styles":{"a":"bda593","b":100,"c":"000000","d":"000000","e":"c5b197","h":"c5b197","k":"FF6600","l":"FF6600","m":"FF6600","q":"FF6600","r":100,"sbc":"bda593","cnrs":"0.6"}}</script>
   </div>
 
   <% cache ["home/index/scheduled", @scheduled] do %>
