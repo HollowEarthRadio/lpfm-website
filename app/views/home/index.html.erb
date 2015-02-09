@@ -11,6 +11,7 @@
     <br/>
         <table>
         <tr><th style="text-decoration: underline;">Recently Played Songs</th></tr>
+        <tr><td><b><span id="currentsong"></span></b></td></tr>
         <tr><td><span id="prevsong1"></span></td></tr>
         <tr><td><span id="prevsong2"></span></td></tr>
         <tr><td><span id="prevsong3"></span></td></tr>
@@ -37,17 +38,29 @@
 </div>
 
 <p class="leader"></p>
-  <% @featured_events.each do |event| %>
-    <%= render partial: "event", :locals => { :event => event } %>
+  <%= render partial: "event", collection: @featured_events %>
+
+  <% unless @current_events.empty? %>
+    <%= render partial: "event", collection: @current_events %>
+
+    <% unless @future_events.empty? %>
+      <div class="featured">
+      <h3>Future events:</h3>
+        <%= render partial: "future_event", collection: @future_events %>
+      </div>
+    <% end %>
+  <% else %>
+    <%= render partial: "event", collection: @future_events %>
   <% end %>
 
-  <% @dated_events.each do |event| %>
-    <%= render partial: "event", :locals => { :event => event } %>
-  <% end %>
+  <% render partial: "event", collection: @static_events %>
 
-  <% @static_events.each do |event| %>
-    <%= render partial: "event", :locals => { :event => event } %>
-  <% end %>
+  <div class="featured">
+    <h3>Hollow Earth Chat</h3>
+    <p>
+      <script id="cid0020000081517256527" data-cfasync="false" async src="//st.chatango.com/js/gz/emb.js" style="width: 640px;height: 320px;">{"handle":"her-fm","arch":"js","styles":{"a":"bda593","b":100,"c":"000000","d":"000000","e":"c5b197","h":"c5b197","k":"FF6600","l":"FF6600","m":"FF6600","q":"FF6600","r":100,"sbc":"bda593","cnrs":"0.6"}}</script>
+    </p>
+  </div>
 
   <div class="featured">
     <% cache ["home/index/featured", @program] do %>

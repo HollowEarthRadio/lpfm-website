@@ -16,6 +16,6 @@
       <h4><%= event.local_start_time %></h4>
     <% end %>
 
-    <p><%= auto_link event.body.html_safe if event.body.present? %></p>
+    <p><%= auto_link simple_format(event.body.html_safe) if event.body.present? %></p>
   </div>
 <% end %>

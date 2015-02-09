@@ -1,0 +1,13 @@
+<% cache ["home/index/_future_event", future_event] do %>
+  <h4>
+    <% if future_event.no_start_time == false %>
+      <%= future_event.local_start_date %>
+    <% end %>
+    - 
+    <% if future_event.fb_id.present? %>
+      <%= facebook_event_link future_event.name, future_event.fb_id %>
+    <% else %>
+      <%= future_event.name %>
+    <% end %>
+  </h4>
+<% end %>

@@ -34,7 +34,18 @@ puts "\nSearching for dirty events..."
 
 fb_events.each do |e|
   ie = koala_api.get_object(e["id"]);
-  fb_picture_url = koala_api.get_picture(e["id"], { type: "large" });
+
+  unless e["id"].nil? || e["id"].blank?
+    fb_picture_url = koala_api.get_picture(e["id"], { type: "large" });
+  else
+    fb_picture_url = ""
+  end
+
+  unless ie["description"].nil? || ie["description"].blank?
+    fb_event_description = ie["description"];
+  else
+    fb_event_description = "";
+  end
 
   edatabase = Event.where(:fb_id => ie["id"]).first;
   if edatabase
@@ -44,7 +55,7 @@ fb_events.each do |e|
       edatabase.name = ie["name"]
       edatabase.start_time = ie["start_time"].to_datetime
       edatabase.location = ie["location"]
-      edatabase.body = ie["description"].gsub!('\n', '<br>')
+      edatabase.body = fb_event_description
       edatabase.fb_id = ie["id"]
       edatabase.event_image = open(fb_picture_url)
       edatabase.save
@@ -58,7 +69,7 @@ fb_events.each do |e|
                            :start_time => ie["start_time"].to_datetime,
                            :no_start_time => false,
                            :location => ie["location"],
-                           :body => ie["description"].gsub("\n", "<br>"),
+                           :body => fb_event_description,
                            :public => true,
                            :featured => false,
                            :fb_id => ie["id"],
