@@ -16,7 +16,10 @@ class HomeController < ApplicationController
   end
 
   def magma
-    @magma_shows = MagmaShow.all.order("date ASC")
+    @magma_shows = MagmaShow.
+      where("date > ?", Time.parse("1-1-2015")).
+      order("date ASC")
+
     @sponsors = Sponsor.all.where(year: Time.zone.now.year.to_s)
   end
 
