@@ -4,8 +4,8 @@ class Event < ActiveRecord::Base
   scope :featured,      -> { where(featured: true) }
   scope :not_featured,  -> { where.not(featured: true) }
   scope :static,        -> { where(no_start_time: true).public }
-  scope :this_week,     -> { where(start_time: DateTime.now..(DateTime.now+1.week)) }
-  scope :next_week,     -> { where(start_time: (DateTime.now+1.week)..(DateTime.now+2.weeks)) }
+  scope :this_week,     -> { where(start_time: (DateTime.now-4.hours)..(DateTime.now+1.week)) }
+  scope :next_week,     -> { where(start_time: (DateTime.now+1.week-4.hours)..(DateTime.now+2.weeks)) }
 
   #has_attached_file :event_image, styles: { cropped: '200x200!' }
 
