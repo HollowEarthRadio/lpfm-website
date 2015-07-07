@@ -42,10 +42,20 @@ function pollstation() {
                         
         jQuery('#currentsong').html(currentTrackName);
     }, function (strData) {
-        var currentTrackName = /\"title\":\"([^".]*)\"/.exec(strData);
-        if (currentTrackName !== null)
+        var titleRegex = /\"title\":\"([^".*])\"/;
+        var notusedRegex = /([^-]*)\s*-*\s*NOTUSED\s*-*\s*([^-]*)/;
+
+        var currentTrackMatch = /\"title\":\"([^".]*)\"/.exec(strData);
+        if (currentTrackMatch !== null)
         {
-            jQuery('#currentsong').html(currentTrackName[1]);
+            var currentTrackName = currentTrackMatch[1];
+
+            if (notusedRegex.test(currentTrackName)) {
+                var notusedMatch = notusedRegex.exec(currentTrackName);
+
+                currentTrackName = notusedMatch[1] + " - " + notusedMatch[2];
+            }
+            jQuery('#currentsong').html(currentTrackName);
         }
     });
 }
