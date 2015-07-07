@@ -5,7 +5,7 @@ jQuery(document).ready(function() {
 });
 
 // Accepts a url and a callback function to run.
-function requestCrossDomain( callback ) {
+function requestCrossDomain( jsonCallback, strCallback ) {
     // Take the provided url, and add it to a YQL query. Make sure you encode it!
     // var sourceDomain = 'https://hollowearth.airtime.pro/';
     var sourceDomain = 'http://centova.rockhost.com:8001/';
@@ -17,42 +17,35 @@ function requestCrossDomain( callback ) {
     }
 
     function getServerData() {
-        $.getJSON(sourceDomain + "status-json.xsl", function (data) {
-            cbFunc(data);
-        });
-        setTimeout(getServerData, 10000);
-    }
-
-    function cbFunc(data) {
-        // If we have something to work with...
-        if ( data ) {
-            // If the user passed a callback, and it
-            // is a function, call it, and send through the data var.
-            if ( typeof callback === 'function') {
-                callback(data);
-            }
-        }
-    	// Else, Maybe we requested a site that doesn't exist, and nothing returned.
-        else throw new Error('Nothing returned from getJSON.');
+        $.getJSON(sourceDomain + "status-json.xsl")
+            .done(function (jsonData) {
+                jsonCallback(jsonData);
+            }).fail(function (jqxhr) {
+                strCallback(jqxhr.responseText);
+            });
+        // setTimeout(getServerData, 10000);
     }
 }
 
 function pollstation() {
-    requestCrossDomain(function(stationData) {
-
+    requestCrossDomain(function(jsonData) {
         var currentTrackName = "";
-        // var previousTrackName = "";        
 
-        if ( stationData ) {
-            if (stationData.icestats != null &&
-                stationData.icestats.source != null) {
-                currentTrackName = stationData.icestats.source.title;
+        if (jsonData) {
+            if (jsonData.icestats != null &&
+                jsonData.icestats.source != null) {
+                currentTrackName = jsonData.icestats.source.title;
             } else {
                 currentTrackName = "No information available.";
             }
         }
                         
         jQuery('#currentsong').html(currentTrackName);
-        //jQuery('#prevsong1').html(previousTrackName);
-    } );
+    }, function (strData) {
+        var currentTrackName = /\"title\":\"([^".]*)\"/.exec(strData);
+        if (currentTrackName !== null)
+        {
+            jQuery('#currentsong').html(currentTrackName[1]);
+        }
+    });
 }
