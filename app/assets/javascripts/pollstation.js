@@ -45,7 +45,7 @@ function pollstation() {
         var titleRegex = /\"title\":\"([^\"]*)\"/;
         var notusedRegex = /([^-]*)\s*-*\s*NOTUSED\s*-*\s*([^-]*)/;
 
-        var currentTrackMatch = /\"title\":\"([^".]*)\"/.exec(strData);
+        var currentTrackMatch = titleRegex.exec(strData);
         if (currentTrackMatch !== null)
         {
             var currentTrackName = currentTrackMatch[1];
