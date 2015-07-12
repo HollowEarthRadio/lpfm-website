@@ -46,8 +46,6 @@ function pollstation() {
                 }
             })
         }
-                        
-        jQuery('#currentsong').html(currentTrackName);
     }, function (strData) {
         var titleRegex = /\"title\":\"([^\"]*)\"/;
         var notusedRegex = /([^-]*)\s*-*\s*NOTUSED\s*-*\s*([^-]*)/;
