@@ -8,7 +8,7 @@ jQuery(document).ready(function() {
 function requestCrossDomain( jsonCallback, strCallback ) {
     // Take the provided url, and add it to a YQL query. Make sure you encode it!
     // var sourceDomain = 'https://hollowearth.airtime.pro/';
-    var sourceDomain = 'http://centova.rockhost.com:8001/';
+    var sourceDomain = 'http://herhq.org:5500/';
     // Request that YSQL string, and run a callback function.
     // Pass a defined function to prevent cache-busting.
     getServerData();
@@ -17,7 +17,7 @@ function requestCrossDomain( jsonCallback, strCallback ) {
     }
 
     function getServerData() {
-        $.getJSON(sourceDomain + "status-json.xsl")
+        $.getJSON(sourceDomain + "titles")
             .done(function (jsonData) {
                 jsonCallback(jsonData);
             }).fail(function (jqxhr) {
@@ -32,12 +32,19 @@ function pollstation() {
         var currentTrackName = "";
 
         if (jsonData) {
-            if (jsonData.icestats != null &&
-                jsonData.icestats.source != null) {
-                currentTrackName = jsonData.icestats.source.title;
-            } else {
-                currentTrackName = "No information available.";
-            }
+            var index = 0
+            $.each(jsonData, function () {
+                if (this != null)
+                {
+                    if (index == 0) {
+                        jQuery('#currentsong').html(this[0])
+                    } else {
+                        jQuery('#prevsong' + index).html(this[0])
+                    }
+
+                    index++;
+                }
+            })
         }
                         
         jQuery('#currentsong').html(currentTrackName);
