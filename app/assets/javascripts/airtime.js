@@ -1,6 +1,6 @@
 var ready;
 ready = function() {
-  var HERDomain = "https://hollowearth.airtime.pro/";
+  var HERDomain = "https://airtime.herhq.org/";
 
   $("#currentShow").airtimeCurrentShow({
     sourceDomain: HERDomain,
