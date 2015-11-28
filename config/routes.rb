@@ -20,9 +20,10 @@ LpfmWebsite::Application.routes.draw do
   get '/theseaportbeat', controller: "home", action: "theseaportbeat"
   get "/magma" => redirect("http://www.magmafest.org")
   get '/splash', controller: "home", action: "splash"
+  get '/campaign', controller: "home", action: "campaign"
   get '/shirts', to: redirect('http://hollowearthradio.bandcamp.com/merch/')
   get '/listen', controller: "home", action: "listen"
 
-  root to: 'home', action: 'index'
-  #root to: 'home', action: 'splash'
+  #root to: 'home', action: 'index'
+  root to: 'home', action: 'campaign'
 end

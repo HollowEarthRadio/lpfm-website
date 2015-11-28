@@ -3,7 +3,6 @@ development:
   encoding: unicode
   database: lpfm_development
   pool: 5
-  username: lpfm_website
   password:
   socket: /var/pgsql_socket
 
@@ -12,7 +11,6 @@ test:
   encoding: unicode
   database: lpfm_test
   pool: 5
-  username: lpfm_website
   password:
 
 # production:

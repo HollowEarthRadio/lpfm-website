@@ -16,6 +16,10 @@ class HomeController < ApplicationController
     render layout: false
   end
 
+  def campaign
+    render layout: false
+  end
+
   def magma
     @magma_shows = MagmaShow.
       where("date > ?", Time.parse("1-1-2015")).
