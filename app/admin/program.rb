@@ -38,6 +38,7 @@ ActiveAdmin.register Program do
       f.input :external_link_name
       f.input :external_link
       f.input :twitter_id
+      f.input :mixcloud
       f.input :archived
       f.input :program_image
       f.input :users, as: :check_boxes, collection: all_users_with_dj_role(program), hint: "If you don't see your DJ name listed, the add your username #{link_to 'here', edit_admin_user_path(current_user)}".html_safe
