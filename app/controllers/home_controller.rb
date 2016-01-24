@@ -5,7 +5,7 @@ class HomeController < ApplicationController
 
   def index
     @program = Program.random
-    @featured_events = Event.featured
+    @featured_events = Event.featured.order(start_time: :asc)
     @current_events = Event.public.with_startime.this_week.order(start_time: :asc).not_featured
     @future_events = Event.public.with_startime.next_week.order(start_time: :asc).not_featured
     @static_events = Event.static.not_featured
