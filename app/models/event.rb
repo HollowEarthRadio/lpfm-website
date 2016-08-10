@@ -1,9 +1,9 @@
 class Event < ActiveRecord::Base
-  scope :public,        -> { where(public: true) }
+  scope :visible,       -> { where(public: true) }
   scope :with_startime, -> { where(no_start_time: false) }
   scope :featured,      -> { where(featured: true) }
   scope :not_featured,  -> { where.not(featured: true) }
-  scope :static,        -> { where(no_start_time: true).public }
+  scope :static,        -> { where(no_start_time: true).visible }
   scope :this_week,     -> { where(start_time: (DateTime.now-4.hours)..(DateTime.now+1.week)) }
   scope :next_week,     -> { where(start_time: (DateTime.now+1.week-4.hours)..(DateTime.now+2.weeks)) }
 
