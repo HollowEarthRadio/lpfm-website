@@ -24,6 +24,10 @@ module ApplicationHelper
     standard_mailto("volunteer", msg)
   end
 
+  def dj_application(msg = "Want a show? Fill out our ONLINE APPLICATION")
+    link_to(msg, "https://docs.google.com/forms/d/e/1FAIpQLSfgOB7gILlMlewYs2-T0FZt7u7cwlYP-CIzM3k_pv2HdOSazQ/viewform", target: '_blank')
+  end
+
   private
 
   def standard_mailto(email_prefix, title)
