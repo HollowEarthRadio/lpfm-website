@@ -1,3 +1,4 @@
+# coding: utf-8
 ActiveAdmin.setup do |config|
 
   # == Site Title
@@ -103,7 +104,7 @@ ActiveAdmin.setup do |config|
   # You can completely disable comments:
   # config.allow_comments = fa
 
-  config.allow_comments = false
+  config.comments = false
   #
   # You can disable the menu item for the comments index page:
   # config.show_comments_in_menu = false
