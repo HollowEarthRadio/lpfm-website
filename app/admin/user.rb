@@ -21,7 +21,7 @@ ActiveAdmin.register User do
     column "DJ?" do |u|
       u.dj?
     end
-    default_actions
+    actions
   end
 
   form partial: "active_admin/users/form"

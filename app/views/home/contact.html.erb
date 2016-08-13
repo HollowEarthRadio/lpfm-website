@@ -1,32 +1,28 @@
-<h2>Points of Contact</h2>
-
-<h3> Contact email </h3>
+<h2> Email </h2>
 
 <ul>
-  <li>General info: <%= info_mailto %> </li>
-  <li>DJ booth: <%= dj_mailto %> </li>
-  <li>Our newsletter: <%= email_list %> </li>
-  <li>Submit music for airplay: <%= music_mailto %></li>
-  <li>Wanna volunteer? <%= volunteer_mailto %></li>
+  <li><%= info_mailto("General information") %> </li>
+  <li><%= dj_mailto("DJ Booth") %> </li>
+  <li><%= music_mailto("Submit music for airplay") %></li>
+  <li><%= volunteer_mailto("Volunteer signup") %></li>
+  <li><%= render partial: "shared/mailing" %> </li>
 </ul>
 
-<h3> Antique Forms Of Communication </h3>
+<h2> Pre-Internet</h2>
   <ul>
     <li>DJ booth: 206-905-1250</li>
     <li>Voicemail line: 206-588-KHER</li>
-    <li>Skype: HollowEarthRadio</li>
     <li>
-      <strong>Snail Mail:</strong> <br/>
       Hollow Earth Radio<br/>
       2018 A E. Union St.<br/>
       Seattle, WA 98122<br/>
     </li>
   </ul>
 
-<h3> On the Socialz </h3>
-<a target="_blank" href="http://www.facebook.com/pages/Hollow-Earth-Radio/32233696630"><i class="fa fa-facebook"></i>
-  <span class="show-for-sr">Facebook</span></a>
-<a target="_blank" href="https://twitter.com/hollowearth"><i class="fa fa-twitter"></i> <span class="show-for-sr">Twitter</span></a>
-<a target="_blank" href="http://hollowearthradio.tumblr.com/"><i class="fa fa-tumblr"></i> <span class="show-for-sr">Tumblr</span></a>
-<a target="_blank" href="https://www.instagram.com/hollowearthradio/"><i class="fa fa-instagram"></i> <span class="show-for-sr">Instagram</span></a>
+<br/>
+<a target="_blank" href="http://www.facebook.com/pages/Hollow-Earth-Radio/32233696630"><i class="fa fa-facebook fa-4x"></i>
+<a target="_blank" href="https://twitter.com/hollowearth"><i class="fa fa-twitter fa-4x""></i></a>
+<a target="_blank" href="http://hollowearthradio.tumblr.com/"><i class="fa fa-tumblr fa-4x""></i></a>
+<a target="_blank" href="https://www.instagram.com/hollowearthradio/"><i class="fa fa-instagram fa-4x""></i></a>
+<a target="_blank" href="skype:hollowearthradio/"><i class="fa fa-skype fa-4x"></i></a>
 </h3>

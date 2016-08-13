@@ -8,24 +8,20 @@ module ApplicationHelper
     link_to "2018a E. Union St, Seattle, WA 98122", "https://maps.google.com/maps?q=2018a+E+Union+St,+Seattle,+WA&hl=en&sll=47.613028,-122.342064&sspn=0.268013,0.396881&hnear=2018+E+Union+St,+Seattle,+Washington+98122&t=m&z=16"
   end
 
-  def info_mailto
-   standard_mailto("info", "email us")
+  def info_mailto(msg = "email us")
+   standard_mailto("info", msg)
   end
 
-  def dj_mailto
-   standard_mailto("dj", "EMAIL DJ")
+  def dj_mailto(msg = "EMAIL DJ")
+   standard_mailto("dj", msg)
   end
 
-  def music_mailto
-   standard_mailto("music", "Music Department")
+  def music_mailto(msg = "Music Department")
+   standard_mailto("music", msg)
   end
 
-  def volunteer_mailto
-    standard_mailto("volunteer", "Volunteer Coordinator")
-  end
-
-  def email_list
-    standard_mailto("publicity", "Mailing List")
+  def volunteer_mailto(msg = "Volunteer Coordinator")
+    standard_mailto("volunteer", msg)
   end
 
   private

@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require pollstation
 //= require cufon-yui
 //= require bookman_600.font
