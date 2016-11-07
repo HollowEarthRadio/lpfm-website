@@ -5,7 +5,7 @@ ActiveAdmin.register MagmaShow do
   index do
     column :name
     column :date
-    default_actions
+    actions
   end
 
   form do |f|

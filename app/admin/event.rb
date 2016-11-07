@@ -6,7 +6,7 @@ ActiveAdmin.register Event do
     column :id
     column :name
     column :public
-    default_actions
+    actions
   end
 
   form do |f|
