@@ -21,4 +21,6 @@ class Program < ActiveRecord::Base
       secret_access_key: ENV['S3_SECRET'],
     },
     styles: { main: "320x320>", medium: "300", thumbnail: "50x50!" }
+
+  validates :program_iamge, attachment_content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] }
 end

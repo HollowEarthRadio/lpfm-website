@@ -7,8 +7,6 @@ class Event < ActiveRecord::Base
   scope :this_week,     -> { where(start_time: (DateTime.now-4.hours)..(DateTime.now+1.week)) }
   scope :next_week,     -> { where(start_time: (DateTime.now+1.week-4.hours)..(DateTime.now+2.weeks)) }
 
-  #has_attached_file :event_image, styles: { cropped: '200x200!' }
-
   has_attached_file :event_image,
     storage: :s3,
     url: ":s3_domain_url",
@@ -20,6 +18,8 @@ class Event < ActiveRecord::Base
       secret_access_key: ENV['S3_SECRET'],
     },
     styles: { cropped: '200x200>' }
+
+  validates :event_iamge, attachment_content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] }
 
   def local_time
     self.start_time.in_time_zone(Rails.application.config.time_zone)
