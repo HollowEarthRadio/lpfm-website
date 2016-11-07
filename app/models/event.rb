@@ -17,7 +17,7 @@ class Event < ActiveRecord::Base
     },
     styles: { cropped: '200x200>' }
 
-  validates :event_iamge, attachment_content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] }
+  validates :event_image, attachment_content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] }
 
   def local_time
     self.start_time.in_time_zone(Rails.application.config.time_zone)

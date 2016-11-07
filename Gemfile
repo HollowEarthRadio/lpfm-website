@@ -9,13 +9,13 @@ gem 'aws-sdk'      # Amazon's official ruby gem; for paperclip
 gem 'coffee-rails' # Use CoffeeScript for .js.coffee assets and views
 gem 'devise'
 gem 'draper'
+gem 'foreman'
 gem 'jquery-rails' # Use jquery as the JavaScript library
 gem 'paperclip'
 gem 'pg'
 gem 'sass-rails'   # Use SCSS for stylesheets
 gem 'thin'
 gem 'uglifier'     # Use Uglifier as compressor for JavaScript assets
-
 
 # what are these ?
 gem 'koala', '~> 1.10.0rc'
