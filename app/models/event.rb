@@ -13,7 +13,7 @@ class Event < ActiveRecord::Base
     path: ":class/:attachment/:id_partition/:style/:filename",
     s3_protocol: 'http',
     s3_credentials: {
-      bucket:            "hollowearth-event-images",
+      bucket: "hollowearth-event-images",
     },
     styles: { cropped: '200x200>' }
 
