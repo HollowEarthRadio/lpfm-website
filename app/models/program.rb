@@ -15,11 +15,8 @@ class Program < ActiveRecord::Base
     url: ":s3_domain_url",
     path: ":class/:attachment/:id_partition/:style/:filename",
     s3_protocol: 'http',
-    s3_region: ENV['AWS_REGION'],
     s3_credentials: {
       bucket:            "hollowearth-program-images",
-      access_key_id:     ENV['S3_KEY'],
-      secret_access_key: ENV['S3_SECRET'],
     },
     styles: { main: "320x320>", medium: "300", thumbnail: "50x50!" }
 

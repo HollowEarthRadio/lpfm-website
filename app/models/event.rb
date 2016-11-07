@@ -12,11 +12,8 @@ class Event < ActiveRecord::Base
     url: ":s3_domain_url",
     path: ":class/:attachment/:id_partition/:style/:filename",
     s3_protocol: 'http',
-    s3_region: ENV['AWS_REGION'],
     s3_credentials: {
       bucket:            "hollowearth-event-images",
-      access_key_id:     ENV['S3_KEY'],
-      secret_access_key: ENV['S3_SECRET'],
     },
     styles: { cropped: '200x200>' }
 
@@ -33,5 +30,4 @@ class Event < ActiveRecord::Base
   def local_start_date
     "#{self.local_time.strftime('%a %b %e')}"
   end
-
 end
