@@ -24,10 +24,10 @@ class Event < ActiveRecord::Base
   end
 
   def local_start_time
-    "#{self.local_time.strftime('%a %b %e - %l:%M %p')}"
+    "#{local_time.strftime('%a %b %e - %l:%M %p')}"
   end
 
   def local_start_date
-    "#{self.local_time.strftime('%a %b %e')}"
+    "#{local_time.strftime('%a %b %e')}"
   end
 end

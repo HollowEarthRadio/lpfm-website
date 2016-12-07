@@ -1,5 +1,5 @@
 development:
-  adapter: postgresql
+  adapter: sqlite #postgresql
   encoding: unicode
   database: lpfm_development
   pool: 5

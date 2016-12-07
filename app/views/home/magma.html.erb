@@ -1,97 +1,90 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
-<html>
-    <head>
-        <title></title>
-    </head>
-    <body>
-        <div id="magma-festival">
-            <div>
-                <h1>
-                    MAGMA FESTIVAL 2015
-                </h1>
-                <div style="position: relative; top: -20px;">
-                    <a href="#schedule">Schedule</a> | <a href="#about">About</a> | <a href="#sponsors">Sponsors</a>
-                </div>
-                <h3>
-                    MAGMA FESTIVAL 2015: WHEN'S IT GONNA BLOW?
-                </h3><br>
-               <%= image_tag "magma/remy1.jpg" %>
-            </div><br>
-            <h3 id="schedule">
-                MAGMA FEST 2015 SCHEDULE
-            </h3>
+<div id="magma-festival">
+  <div>
+    <h1>
+      MAGMA FESTIVAL 2017
+    </h1>
+    <div style="position: relative; top: -20px;">
+      <a href="#schedule">Schedule</a> | <a href="#about">About</a> | <a href="#sponsors">Sponsors</a>
+    </div>
+    <h3>
+      MAGMA FESTIVAL 2015: WHEN'S IT GONNA BLOW?
+    </h3><br>
+    <%= image_tag "magma/remy1.jpg" %>
+  </div><br>
+  <h3 id="schedule">
+    MAGMA FEST 2015 SCHEDULE
+  </h3>
 
-            <%= render partial: "magma_show", collection: @magma_shows %>
+  <%= render partial: "magma_show", collection: @magma_shows %>
 
-            <p align="right">
-                <a href="#magma-festival">Back to top</a><br>
-                <br>
-                <br>
-            </p>
-            <h3 id="about">
-                About
-            </h3>
-            <p class="black_text">
-                <br>
-              We are so excited for what will be the 8th annual Magma Festival! As an extension of Hollow Earth Radio’s mission to provide a forum for underrepresented sounds and perspectives, we put on this month-long festival to highlight our favorite artists and musicians!  Magma Festival is an essential part of our core programming and has become a central component of what we do. It also provides a chance for the Northwest music community to show their support for the station. The proceeds of this year’s festival will directly support Hollow Earth’s Radio’s transition to Low Power FM, while keeping us afloat and accessible as a resource for the local community!
-              <br/><p/>
+  <p align="right">
+    <a href="#magma-festival">Back to top</a><br>
+    <br>
+    <br>
+  </p>
+  <h3 id="about">
+    About
+  </h3>
+  <p class="black_text">
+    <br>
+    We are so excited for what will be the 8th annual Magma Festival! As an extension of Hollow Earth Radio’s mission to provide a forum for underrepresented sounds and perspectives, we put on this month-long festival to highlight our favorite artists and musicians!  Magma Festival is an essential part of our core programming and has become a central component of what we do. It also provides a chance for the Northwest music community to show their support for the station. The proceeds of this year’s festival will directly support Hollow Earth’s Radio’s transition to Low Power FM, while keeping us afloat and accessible as a resource for the local community!
+    <br/><p/>
 
-              <strong>Highlights include:</strong>
-              <ul>
-              <li>
-* The Warm-Up: The festival begins with an afternoon of collage, stand-up comedy, and soup, followed by spoken word from local writers and live music from Freeway Park and Queequeg!
-              </li>
-              <li>
-The BLOW-OUT: Featuring SIC ILL (Tacoma), LH2020 (Seattle), Fantasy A (Seattle), and more TBA, an explosive evening of music by artists from the Pacific Northwest hip-hop continuum and beyond!
-              </li>
-              <li>
-Yonic Boom!: Hollow Earth’s all female group radio show/creative collective hosts an evening of dance, spoken word, performance art, and music from Lilac, Ings, and Dar Pal!
-              </li>
-              <li>
-Last year’s Eiderdown Sound Salon (curated by Seattle tape label Eiderdown Records) was one of the highlights of Magma 2014, and this year they present another iteration, featuring noiseniks Funky Photos (with a funky photo booth), Pink Void, Geological Creep, and others!
-              </li>
-              <li>
- The Women Who Rock community present an event kicking off the 5th Annual Women Who Rock (un)Conference, bringing participatory music and dance (and a wooden portable dancefloor) to the Hollow Earth space!
-              </li>
-              <li>
-This is but a small slice of the amazing lineup for our festival which takes place every Friday, Saturday, & Sunday (and a Tuesday!) in March at a host of alternative and all-ages venues in Seattle (17 shows in all!).
-              </li>
-            </ul>
-            <p align="right">
-                <a href="#magma-festival">Back to top</a><br>
-                <br>
-                <br>
-            </p>
-                <%= link_to(image_tag("magma/remy2.jpg"), "/magma") %>
-            <br>
-            <br>
-            <div id="three" class="black_text"></div>
-            <div id="four" class="black_text">
-                <p align="right">
-                    <a href="#magma-festival">Back to top</a>
-                </p>
-                <h3 id="sponsors">
-                    SPONSORS
-                </h3>
-                <p>
-                    We wouldn't be able to make Magma Festival a success without the help of our sponsors. Thanks so much to these rad folks for helping to support Hollow Earth Radio into our glorious future!
-                </p>
-                <ul>
-                    <% @sponsors.each do |sponsor| %>
-                        <li>
-                            <%= link_to sponsor.name, sponsor.link %>
-                        </li>
-                    <% end %>
-                </ul>
+    <strong>Highlights include:</strong>
+    <ul>
+      <li>
+        * The Warm-Up: The festival begins with an afternoon of collage, stand-up comedy, and soup, followed by spoken word from local writers and live music from Freeway Park and Queequeg!
+      </li>
+      <li>
+        The BLOW-OUT: Featuring SIC ILL (Tacoma), LH2020 (Seattle), Fantasy A (Seattle), and more TBA, an explosive evening of music by artists from the Pacific Northwest hip-hop continuum and beyond!
+      </li>
+      <li>
+        Yonic Boom!: Hollow Earth’s all female group radio show/creative collective hosts an evening of dance, spoken word, performance art, and music from Lilac, Ings, and Dar Pal!
+      </li>
+      <li>
+        Last year’s Eiderdown Sound Salon (curated by Seattle tape label Eiderdown Records) was one of the highlights of Magma 2014, and this year they present another iteration, featuring noiseniks Funky Photos (with a funky photo booth), Pink Void, Geological Creep, and others!
+      </li>
+      <li>
+        The Women Who Rock community present an event kicking off the 5th Annual Women Who Rock (un)Conference, bringing participatory music and dance (and a wooden portable dancefloor) to the Hollow Earth space!
+      </li>
+      <li>
+        This is but a small slice of the amazing lineup for our festival which takes place every Friday, Saturday, & Sunday (and a Tuesday!) in March at a host of alternative and all-ages venues in Seattle (17 shows in all!).
+      </li>
+    </ul>
+    <p align="right">
+      <a href="#magma-festival">Back to top</a><br>
+      <br>
+      <br>
+    </p>
+    <%= link_to(image_tag("magma/remy2.jpg"), "/magma") %>
+    <br>
+    <br>
+    <div id="three" class="black_text"></div>
+    <div id="four" class="black_text">
+      <p align="right">
+        <a href="#magma-festival">Back to top</a>
+      </p>
+      <h3 id="sponsors">
+        SPONSORS
+      </h3>
+      <p>
+        We wouldn't be able to make Magma Festival a success without the help of our sponsors. Thanks so much to these rad folks for helping to support Hollow Earth Radio into our glorious future!
+      </p>
+      <ul>
+        <% @sponsors.each do |sponsor| %>
+          <li>
+            <%= link_to sponsor.name, sponsor.link %>
+          </li>
+        <% end %>
+      </ul>
 
-                <p>
-                    If you would like to become a sponsor for this festival, please email:<br>
-                    magma {at} hollowearthradio {dot} org.
-                </p>
-                <p align="right">
-                    <a href="#magma-festival">Back to top</a>
-                </p>
-            </div>
-        </div><!-- a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=XJPPE9E52Y58G" class="links" target="_blank">Donate $60</a -->
+      <p>
+        If you would like to become a sponsor for this festival, please email:<br>
+        magma {at} hollowearthradio {dot} org.
+      </p>
+      <p align="right">
+        <a href="#magma-festival">Back to top</a>
+      </p>
+    </div>
+</div><!-- a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=XJPPE9E52Y58G" class="links" target="_blank">Donate $60</a -->
     </body>
-</html>
