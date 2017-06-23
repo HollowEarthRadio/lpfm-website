@@ -25,6 +25,9 @@ LpfmWebsite::Application.routes.draw do
   get '/shirts', to: redirect('http://hollowearthradio.bandcamp.com/merch/')
   get '/listen', controller: "home", action: "listen"
 
+  get '/safer_space', controller: "home", action: "safer_space"
+  get '/dj_pledge', controller: "home", action: "dj_pledge"
+
   root to: 'home', action: 'index'
   #root to: 'home', action: 'campaign'
 end
