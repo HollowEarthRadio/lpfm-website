@@ -20,6 +20,10 @@ class HomeController < ApplicationController
     render layout: false
   end
 
+  def safer_space; end
+
+  def dj_pledge; end
+
   def magma
     @magma_shows = MagmaShow.
       where("date > ?", Time.parse("1-1-2015")).
