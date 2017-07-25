@@ -12,8 +12,8 @@ LpfmWebsite::Application.routes.draw do
   get "/about", controller: "home", action: 'about'
   get "/contact", controller: "home", action: 'contact'
   get "/schedule", controller: "home", action: 'schedule'
-  get "/donate", controller: "home", action: 'donate'
-  #get "/donate", to: redirect("https://www.indiegogo.com/projects/hollow-earth-radio-finally-on-the-airwaves--2#/")
+  #get "/donate", controller: "home", action: 'donate'
+  get "/donate", to: redirect("https://khuh.givingfuel.com/membership")
   get "/volunteer", controller: "home", action: 'volunteer'
   get "/submissions", controller: "home", action: 'contribute'
   get "/faq", controller: "home", action: 'faq'
