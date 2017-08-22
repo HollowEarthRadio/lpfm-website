@@ -257,7 +257,7 @@ DEPENDENCIES
   draper
   foreman
   jquery-rails
-  koala (~> 1.10.0rc)
+  koala
   memcachier
   paperclip
   pg

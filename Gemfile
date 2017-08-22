@@ -18,7 +18,7 @@ gem 'thin'
 gem 'uglifier'     # Use Uglifier as compressor for JavaScript assets
 
 # what are these ?
-gem 'koala', '~> 1.10.0rc'
+gem 'koala'
 gem 'rails_autolink'
 gem 'dalli'
 gem 'memcachier'
