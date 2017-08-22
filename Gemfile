@@ -22,10 +22,10 @@ gem 'koala'
 gem 'rails_autolink'
 gem 'dalli'
 gem 'memcachier'
+gem 'pry'
 
 group :development do
   gem 'awesome_print'
-  gem 'pry'
   gem 'sqlite3'
 end
 
