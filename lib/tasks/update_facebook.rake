@@ -3,7 +3,6 @@
 #
 # See https://github.com/iliu/mysite-examples/tree/fb_graph_cache for the
 # original code.
-require "pry"
 
 desc "This task is called by the Heroku scheduler add-on"
 task :update_facebook => :environment do
@@ -54,6 +53,7 @@ task :update_facebook => :environment do
     edatabase = Event.where(:fb_id => ie["id"]).first;
     if edatabase
       if !ie["updated_time"].nil? && ie["updated_time"] > edatabase.updated_at
+  p
         puts "\n**found dirty facebook event - "+ie["name"]
 
         edatabase.name = ie["name"]
