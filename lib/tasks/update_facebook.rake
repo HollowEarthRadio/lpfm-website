@@ -52,6 +52,8 @@ task :update_facebook => :environment do
 
     edatabase = Event.where(:fb_id => ie["id"]).first;
     if edatabase
+      puts "*** Checking out "+ie["name"]
+
       if ie["updated_time"] > edatabase.updated_at
         puts "\n**found dirty facebook event - "+ie["name"]
 
