@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby "2.1.10"
+ruby "2.2.9"
 
 gem 'activeadmin', github: 'activeadmin'
 
