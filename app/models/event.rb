@@ -12,6 +12,7 @@ class Event < ActiveRecord::Base
     url: ":s3_domain_url",
     path: ":class/:attachment/:id_partition/:style/:filename",
     s3_protocol: 'http',
+    s3_region: "us-west-2",
     s3_credentials: {
       bucket: "hollowearth-event-images",
     },

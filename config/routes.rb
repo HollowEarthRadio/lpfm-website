@@ -12,7 +12,6 @@ LpfmWebsite::Application.routes.draw do
   get "/about", controller: "home", action: 'about'
   get "/contact", controller: "home", action: 'contact'
   get "/schedule", controller: "home", action: 'schedule'
-  #get "/donate", controller: "home", action: 'donate'
   get "/donate", to: redirect("https://khuh.givingfuel.com/membership")
   get "/volunteer", controller: "home", action: 'volunteer'
   get "/submissions", controller: "home", action: 'contribute'
@@ -21,13 +20,11 @@ LpfmWebsite::Application.routes.draw do
   get '/theseaportbeat', controller: "home", action: "theseaportbeat"
   get "/magma" => redirect("http://www.magmafest.org")
   get '/splash', controller: "home", action: "splash"
-  # get '/campaign', controller: "home", action: "campaign"
   get '/shirts', to: redirect('http://hollowearthradio.bandcamp.com/merch/')
   get '/listen', controller: "home", action: "listen"
 
   get '/safer_space', controller: "home", action: "safer_space"
   get '/dj_pledge', controller: "home", action: "dj_pledge"
 
-  root to: 'home', action: 'index'
-  #root to: 'home', action: 'campaign'
+  root to: 'home', controller: "home", action: 'index'
 end
