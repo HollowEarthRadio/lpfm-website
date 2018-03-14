@@ -16,7 +16,6 @@
       <%= link_to program.name, program_path(program) %> <br/>
       <%= program.air_times %><br/>
 
-      <% binding.pry %>
       <% program.users.each do |dj| %>
         <%= dj.dj_name %><br/>
       <% end %>
