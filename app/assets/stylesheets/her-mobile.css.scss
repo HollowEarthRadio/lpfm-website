@@ -16,7 +16,7 @@ body {
 #main {
     text-align:left;
     float:left;
-    width:722px;
+    width:640px;
     /** CHANGE THIS ONE WHEN THERE ARE MORE DJS */
     min-height:2100px;
     background:#c5b197;
@@ -25,7 +25,7 @@ body {
 }
 
 #content {
-    width:688px;
+    width:640px;
     float:left;
     padding:15px;
 }
@@ -175,7 +175,7 @@ h3{
 
 #footer{
     margin:0 auto;
-    width:1000px;
+    width:640px;
     height:189px;
     float:left;
     background-image:url(image-path("template/her_bg_footer.jpg"));
@@ -331,7 +331,7 @@ blockquote {
 
 #wrapper {
     margin:0 auto;
-    width:1000px;
+    width:640px;
     background:#2c2419;
     overflow:hidden;
     border-left:1px #000 solid;
@@ -340,10 +340,10 @@ blockquote {
 
 #header{
     margin:0 auto;
-    width:1000px;
+    width:640px;
     height:165px;
     background:#2c2419;
-    background-image:url(image-path("template/her_bg_header.jpg"));
+    background-image:url(image-path("template_mobile/her_bg_header.jpg"));
     background-repeat:no-repeat;
 }
 

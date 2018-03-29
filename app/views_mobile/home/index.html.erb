@@ -1,0 +1,88 @@
+<div id="recently_played">
+
+  <iframe id="ListFrame" name="ListFrame" style="width:415px; height:60px; border:none;" scrolling="no";
+      src="https://her-player.herokuapp.com/index.html">]
+  </iframe>
+
+  <div style="padding-left:10px">
+    <div id="currentShow"></div>
+    <!-- br/ -->
+
+    <br/>
+        <table>
+        <tr><th style="text-decoration: underline;">Recently Played Songs</th></tr>
+        <tr><td><b><span id="currentsong"></span></b></td></tr>
+        <tr><td><span id="prevsong1"></span></td></tr>
+        <tr><td><span id="prevsong2"></span></td></tr>
+        <tr><td><span id="prevsong3"></span></td></tr>
+        <tr><td><span id="prevsong4"></span></td></tr>
+        <tr><td><span id="prevsong5"></span></td></tr>
+        <tr><td><span id="prevsong6"></span></td></tr>
+        <tr><td><span id="prevsong7"></span></td></tr>
+        <tr><td><span id="prevsong8"></span></td></tr>
+        <tr><td><span id="prevsong9"></span></td></tr>
+        <tr><td><span id="prevsong10"></span></td></tr>
+        </table>
+
+  </div><!-- This will update our 'recently played' box -->
+</div>
+
+
+<div>
+  <h2>
+    Welcome
+  </h2>
+    <p>
+MOBILE MOBILE We are a Low Power FM (LPFM) non-commercial DIY radio station broadcasting on <b>KHUH 104.9 FM</b> and online from a public space in Seattle's Central District.
+Our focus is on audio not often heard on the traditional radio dial, including: found sound, field recordings, forgotten music, local musicians, bedroom recordings, lo-fi demos, dreams, storytelling, conversations from within marginalized communities and <em>things that feel real</em>.
+We acknowledge and celebrate raw talent and imperfections, and encourage emerging artists to take a chance with us. 
+We support local and northwest music and other underground music from around the world.
+    </p>
+</div>
+
+<p class="leader"></p>
+  <%= render partial: "event", collection: @featured_events %>
+
+  <% unless @current_events.empty? %>
+    <%= render partial: "event", collection: @current_events %>
+
+    <% unless @future_events.empty? %>
+      <div class="featured">
+      <h3>Future events:</h3>
+        <%= render partial: "future_event", collection: @future_events %>
+      </div>
+    <% end %>
+  <% else %>
+    <%= render partial: "event", collection: @future_events %>
+  <% end %>
+
+  <% render partial: "event", collection: @static_events %>
+
+  <div class="featured">
+    <h3>Hollow Earth Chat</h3>
+    <p>
+      <script id="cid0020000081517256527" data-cfasync="false" async src="//st.chatango.com/js/gz/emb.js" style="width: 640px;height: 320px;">{"handle":"her-fm","arch":"js","styles":{"a":"bda593","b":100,"c":"000000","d":"000000","e":"c5b197","h":"c5b197","k":"FF6600","l":"FF6600","m":"FF6600","q":"FF6600","r":100,"sbc":"bda593","cnrs":"0.6"}}</script>
+    </p>
+  </div>
+
+  <div class="featured">
+    <% cache ["home/index/featured", @program] do %>
+      <% if @program.nil? || @program.blank? %>
+        NO PROGRAMS YET
+      <% else %>
+        <%= render partial: "featured_show", :locals => { :program => @program } %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <% cache ["home/index/scheduled", @scheduled] do %>
+    <div class="djs">
+      <h3>More Shows</h3>
+        <% @scheduled.each do |p| %>
+          <% if p.program_image.exists? %>
+           <%= link_to image_tag(p.program_image.url(:thumbnail)), program_path(p) if (p.id != @program.id) %>
+          <% end %>
+        <% end %>
+    </div>
+  <% end %>
+<div style="clear:both;"></div>

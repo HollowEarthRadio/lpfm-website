@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta name="google-site-verification" content="-CDGXuVzjjs_selz5uiO3BcWWgLA2uh5Wf3GZjZBuu4" />
+    <title>Hollow Earth Radio</title>
+
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag "her-mobile", :media => "all" %>
+    <%= stylesheet_link_tag "her-program", :media => "all" %>
+    <%= stylesheet_link_tag "airtime-widgets", :media => "all" %>
+    <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css", media: "all" %>
+    <!--[if lt IE 8]>
+      <%= stylesheet_link_tag "her-ie" %>
+    <![endif]-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    <script type="text/javascript">
+      Cufon.replace('h1');
+      Cufon.replace('h2');
+      Cufon.replace('h3');
+      Cufon.replace('#navigation li a');
+
+      /** Magma Gradient */
+      Cufon.replace('#navigation li strong  a', {
+        color: '-linear-gradient(#ff6600, #ff6600, #ff3300, rgb(0, 0, 0))'
+      });
+
+      /** Seaport Gradient */
+      Cufon.replace('#navigation li strong span a', {
+        color: '#619BD9'
+      });
+
+
+      /** BLINK */
+     spe=500;
+     NameOfYourTags="mi";
+
+     swi=1;
+     na=document.getElementsByName(NameOfYourTags);
+
+     bringBackBlinky();
+
+     function bringBackBlinky() {
+
+       if (swi == 1) {
+         sho="visible";
+         swi=0;
+       }
+       else {
+         sho="hidden";
+         swi=1;
+       }
+
+       for(i=0;i<na.length;i++) {
+         na[i].style.visibility=sho;
+       }
+
+      setTimeout("bringBackBlinky()", spe);
+      }
+    </script>
+
+
+    <!-- Piwik -->
+
+    <script type="text/javascript">
+     var _paq = _paq || [];
+     _paq.push(['trackPageView']);
+     _paq.push(['enableLinkTracking']);
+     (function() {
+       var u="//piwik.herhq.org/";
+       _paq.push(['setTrackerUrl', u+'piwik.php']);
+       _paq.push(['setSiteId', 1]);
+       var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+       g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+     })();
+    </script>
+    <noscript><p><img src="//piwik.herhq.org/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+    <!-- End Piwik Code -->
+
+  </head>
+  <body>
+
+  <div id="wrapper">
+    <div id="header">
+      <%= image_tag "template/spacer.gif", :size => "1000x169", :border => "0", :usemap => "#bannerLinks", :alt => "spacer"%>
+
+        <map name="bannerLinks" id="bannerLinks">
+          <area href="http://hollowearthradio.org/home" alt="Home" title="" shape="rect" coords="198,24,816,69"/>
+          <area href="http://hollowearthradio.org/listen" alt="Listen" title="" shape="rect" coords="841,18,961,70"/>
+        </map>
+    </div>
+
+    <!--
+    <div id="navigation">
+      <p style="margin-top:0px;">&nbsp;</p>
+
+      <ul>
+        <li><%= link_to "Home", controller: 'home', action: 'index' %></li>
+        <li><%= listen_link("Listen") %></li>
+        <li><%= link_to 'About', controller: 'home', action: 'about' %></li>
+        <li><%= link_to 'Radio Shows', controller: 'programs', action: 'index' %></li>
+        <li><%= link_to 'Schedule', controller: 'home', action: 'schedule' %></li>
+        <li><%= link_to 'Contact', controller: 'home', action: 'contact' %></li>
+        <li><%= link_to 'Donate', donate_path %></li>
+        <li><%= link_to 'Volunteer', controller: 'home', action: 'volunteer' %></li>
+        <li><%= link_to 'Submissions', controller: 'home', action: 'contribute' %></li>
+        <li><%= link_to 'Blog', 'http://hollowearthradio.tumblr.com' %></li>
+        <li><%= link_to 'FAQ', controller: 'home', action: 'faq' %> </li>
+        <li><%= link_to 'Podcasts', 'http://www.soundcloud.com/hollowearthradio' %></li>
+        <li><%= link_to 'Sea-Port Beat', theseaportbeat_url %></li>
+
+        <li style=""><%= image_tag "trans-logo.png", :size=> "140x170"%></li>
+      </ul>
+
+      <div id="twitter-feed">
+        <a class="twitter-timeline" height="300" href="https://twitter.com/<%= @twitter_id %>" data-screen-name="<%= @twitter_id %>" data-theme="dark" data-tweet-limit="5" data-link-color="#FF6600" data-chrome="nofooter noborders transparent" data-widget-id="481869494151692288">Tweets by @<%= @twitter_id %></a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+      </div>
+    </div>
+  -->
+  <!-- END sidebar -->
+
+    <div id="main">
+      <div id="content">
+        <div id="top-navigation">
+          <span style="float:left;font-size:12px;">
+            <%= dj_mailto %> | CALL A DJ 206-905-1250 | LEAVE WEIRD VOICEMAILS 206-588-KHER
+            <a href="http://twitter.com/hollowearth">&nbsp;| @hollowearth</a> |
+          </span>
+        </div>
+        <br/>
+        <%= yield %>
+      </div>
+    </div>
+
+    <div id="footer">
+    </div>
+  </div>
+
+  <script type="text/javascript"> Cufon.now(); </script>
+  </body>
+</html>
