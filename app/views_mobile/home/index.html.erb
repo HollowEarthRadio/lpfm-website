@@ -1,6 +1,6 @@
 <div id="recently_played">
 
-  <iframe id="ListFrame" name="ListFrame" style="width:415px; height:60px; border:none;" scrolling="no";
+  <iframe id="ListFrame" name="ListFrame" style="width: 100%; height:60px; border:none;" scrolling="no";
       src="https://her-player.herokuapp.com/index.html">]
   </iframe>
 
@@ -57,13 +57,6 @@ We support local and northwest music and other underground music from around the
   <% end %>
 
   <% render partial: "event", collection: @static_events %>
-
-  <div class="featured">
-    <h3>Hollow Earth Chat</h3>
-    <p>
-      <script id="cid0020000081517256527" data-cfasync="false" async src="//st.chatango.com/js/gz/emb.js" style="width: 640px;height: 320px;">{"handle":"her-fm","arch":"js","styles":{"a":"bda593","b":100,"c":"000000","d":"000000","e":"c5b197","h":"c5b197","k":"FF6600","l":"FF6600","m":"FF6600","q":"FF6600","r":100,"sbc":"bda593","cnrs":"0.6"}}</script>
-    </p>
-  </div>
 
   <div class="featured">
     <% cache ["home/index/featured", @program] do %>

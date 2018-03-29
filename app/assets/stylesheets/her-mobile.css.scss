@@ -16,7 +16,7 @@ body {
 #main {
     text-align:left;
     float:left;
-    width:640px;
+    width: 100%;
     /** CHANGE THIS ONE WHEN THERE ARE MORE DJS */
     min-height:2100px;
     background:#c5b197;
@@ -25,7 +25,7 @@ body {
 }
 
 #content {
-    width:640px;
+    width: 100%;
     float:left;
     padding:15px;
 }
@@ -89,7 +89,7 @@ a img {
     list-style:auto;
 }
 #top-navigation{
-    width:688px;
+    width: 100%;
     margin:-5px 0 10px 0;
     color:#1e160f;
     text-align:right;
@@ -98,7 +98,7 @@ a img {
 }
 
 #login-box,#flash-notice{
-    width:688px;
+    width: 100%;
     margin:5px 0 15px 0;
     padding:5px 5px 5px 0;
     text-align:left;
@@ -132,7 +132,7 @@ h3{
 }
 
 #recently_played{
-    width:420px;
+    width: 100%;
     float:right;
     margin:5px 0 8px 5px;
     background:#bda593;
@@ -147,27 +147,27 @@ h3{
 }
 
 .featured{
-    width:680px;
+    width: 100%;
     margin:0 15px 0 0;
     padding:10px 10px 10px 0;
     float:left;
 }
 
 .featured-item{
-    width:330px;
+    width: 100%;
     margin:0;
     float:left;
 }
 
 .djs{
-    width:680px;
+    width: 100%;
     margin:0 15px 0px 0px;
     padding:10px 10px 10px 0;
     float:left;
 }
 
 #blog{
-    width:680px;
+    width: 100%;
     margin:15px 0 0 5px;
     padding:10px 10px 10px 0;
     border-bottom:1px dotted #333;
@@ -175,7 +175,7 @@ h3{
 
 #footer{
     margin:0 auto;
-    width:640px;
+    width: 100%;
     height:189px;
     float:left;
     background-image:url(image-path("template/her_bg_footer.jpg"));
@@ -231,7 +231,7 @@ p.featured{
 }
 
 #search-text, #login, #password{
-    width:140px;
+    width: 100%;
     background:#fff;
     color:#333;
     border-color:#ccc;
@@ -331,7 +331,7 @@ blockquote {
 
 #wrapper {
     margin:0 auto;
-    width:640px;
+    width: 100%;
     background:#2c2419;
     overflow:hidden;
     border-left:1px #000 solid;
@@ -340,25 +340,9 @@ blockquote {
 
 #header{
     margin:0 auto;
-    width:640px;
+    width: 100%;
     height:165px;
     background:#2c2419;
     background-image:url(image-path("template_mobile/her_bg_header.jpg"));
     background-repeat:no-repeat;
-}
-
-#navigation{
-    float:left;
-    width:278px;
-    text-align:left;
-    min-height:667px;
-    background:#2c2419;
-    background-image:url(image-path("template/her_bg_nav.jpg"));
-    background-repeat:no-repeat;
-}
-
-#twitter-feed{
-    width:175px;
-    float:left;
-    margin:0 0 0 60px;
 }
