@@ -49,6 +49,7 @@ LpfmWebsite::Application.configure do
     her-ie.css
     her-program.css
     her.css
+    her-mobile.css
     hollow.css
     active-admin.css
     airtime-widgets.css
