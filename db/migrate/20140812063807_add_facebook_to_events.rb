@@ -1,4 +1,4 @@
-class AddFacebookToEvents < ActiveRecord::Migration
+class AddFacebookToEvents < ActiveRecord::Migration[4.2]
   def change
     add_column :events, :featured, :boolean, default: false
     add_column :events, :start_time, :datetime

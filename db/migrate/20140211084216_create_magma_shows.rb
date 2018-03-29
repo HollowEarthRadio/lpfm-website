@@ -1,4 +1,4 @@
-class CreateMagmaShows < ActiveRecord::Migration
+class CreateMagmaShows < ActiveRecord::Migration[4.2]
   def change
     create_table :magma_shows do |t|
       t.string :name

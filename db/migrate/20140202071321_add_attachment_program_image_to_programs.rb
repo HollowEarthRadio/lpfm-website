@@ -1,4 +1,4 @@
-class AddAttachmentProgramImageToPrograms < ActiveRecord::Migration
+class AddAttachmentProgramImageToPrograms < ActiveRecord::Migration[4.2]
   def self.up
     change_table :programs do |t|
       t.attachment :program_image
