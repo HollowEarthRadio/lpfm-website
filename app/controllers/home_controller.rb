@@ -1,6 +1,8 @@
 class HomeController < ApplicationController
   layout "default"
 
+  before_action :check_for_mobile
+
   before_action :set_twitter_id
 
   def index
