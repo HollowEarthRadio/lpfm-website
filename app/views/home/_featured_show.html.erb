@@ -1,21 +1,26 @@
-<% if false #Program.current_program %>
-    <h3 >NOW BROADCASTING<span name="mi">!!!!!!</span></h3>
+<% if program.blank? %>
+  No Such Program
 <% else %>
+  <% if false #Program.current_program %>
+    <h3 >NOW BROADCASTING<span name="mi">!!!!!!</span></h3>
+  <% else %>
     <h3>Featured Show</h3>
-<% end %>
+  <% end %>
+
   <p>
-
-<% if program.program_image.exists? %>
-  <%= image_tag program.program_image.url(:medium) %>
-<% end %>
-<span class="featured-title">
-  <%= link_to program.name, program_path(program) %> <br/>
-    <%= program.air_times %><br />
-    <% program.users.each do |dj| %>
-      <%= dj.dj_name %><br/>
+    <% if program.program_image.exists? %>
+      <%= image_tag program.program_image.url(:medium) %>
     <% end %>
-</span>
-  <strong> Program Description:</strong>
-  <%= program.description %><br/>
-  </p>
 
+    <span class="featured-title">
+      <%= link_to program.name, program_path(program) %> <br/>
+      <%= program.air_times %><br/>
+
+      <% program.users.each do |dj| %>
+        <%= dj.dj_name %><br/>
+      <% end %>
+    </span>
+    <strong> Program Description:</strong>
+    <%= program.description %><br/>
+  </p>
+<% end %>

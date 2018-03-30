@@ -12,9 +12,12 @@ LpfmWebsite::Application.routes.draw do
   get "/about", controller: "home", action: 'about'
   get "/contact", controller: "home", action: 'contact'
   get "/schedule", controller: "home", action: 'schedule'
+<<<<<<< HEAD
   #get "/donate", controller: "home", action: 'donate'
   get "/donate", to: redirect("https://khuh.givingfuel.com/twinbox")
-  #get "/donate", to: redirect("https://khuh.givingfuel.com/cold-hard-donations")
+=======
+  get "/donate", to: redirect("https://khuh.givingfuel.com/cold-hard-donations")
+>>>>>>> d7e585f84c8ff6aa627e28e905717554acf1e1b8
   get "/volunteer", controller: "home", action: 'volunteer'
   get "/submissions", controller: "home", action: 'contribute'
   get "/faq", controller: "home", action: 'faq'

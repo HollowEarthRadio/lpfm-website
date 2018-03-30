@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
-ruby "2.1.10"
+ruby "2.2.2"
 
-gem 'activeadmin', github: 'activeadmin'
+gem 'activeadmin'
 
-gem 'rails', '~> 4.2.0'
+gem 'rails', '~> 5'
 
 gem 'aws-sdk'      # Amazon's official ruby gem; for paperclip
 gem 'coffee-rails' # Use CoffeeScript for .js.coffee assets and views
@@ -11,8 +11,8 @@ gem 'devise'
 gem 'draper'
 gem 'foreman'
 gem 'jquery-rails' # Use jquery as the JavaScript library
-gem 'paperclip'
-gem 'pg'
+gem 'paperclip', '~> 5.2.1'
+gem 'pg', '~> 0.20'
 gem 'sass-rails'   # Use SCSS for stylesheets
 gem 'thin'
 gem 'uglifier'     # Use Uglifier as compressor for JavaScript assets
