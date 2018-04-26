@@ -8,7 +8,7 @@ jQuery(document).ready(function() {
 function requestCrossDomain( jsonCallback, strCallback ) {
     // Take the provided url, and add it to a YQL query. Make sure you encode it!
     // var sourceDomain = 'https://hollowearth.airtime.pro/';
-    var sourceDomain = 'https://herhq.org:5600/';
+    var sourceDomain = 'https://titles.herhq.org:5600/';
     // Request that YSQL string, and run a callback function.
     // Pass a defined function to prevent cache-busting.
     getServerData();
