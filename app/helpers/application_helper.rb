@@ -12,6 +12,10 @@ module ApplicationHelper
    standard_mailto("info", msg)
   end
 
+  def booking_mailto(msg = "book a show")
+   standard_mailto("booking", msg)
+  end
+
   def dj_mailto(msg = "EMAIL DJ")
    standard_mailto("dj", msg)
   end
@@ -31,6 +35,6 @@ module ApplicationHelper
   private
 
   def standard_mailto(email_prefix, title)
-    mail_to "#{email_prefix}@hollowearthradio.org?subject=I want to be on the hollow earth mailing list!", title
+    mail_to "#{email_prefix}@hollowearthradio.org", title
   end
 end

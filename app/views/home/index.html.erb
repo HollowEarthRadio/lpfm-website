@@ -33,18 +33,18 @@
     Welcome
   </h2>
     <p>
-We are a Low Power FM (LPFM) non-commercial DIY radio station broadcasting on <b>KHUH 104.9 FM</b> and online from a public space in Seattle's Central District.
-Our focus is on audio not often heard on the traditional radio dial, including: found sound, field recordings, forgotten music, local musicians, bedroom recordings, lo-fi demos, dreams, storytelling, conversations from within marginalized communities and <em>things that feel real</em>.
-We acknowledge and celebrate raw talent and imperfections, and encourage emerging artists to take a chance with us. 
-We support local and northwest music and other underground music from around the world.
+      We are a Low Power FM (LPFM) non-commercial DIY radio station broadcasting on <b>KHUH 104.9 FM</b> and online from a public space in Seattle's Central District.
+      We are also an all-ages music and performance venue. Our focus is on audio not often heard on the traditional radio dial, including: found sound, field recordings, forgotten music, local musicians, bedroom recordings, lo-fi demos, dreams, storytelling, conversations from within marginalized communities and <em>things that feel real</em>.
+We acknowledge and celebrate raw talent and imperfections, and encourage emerging artists to take a chance with us.
+We support local and NW music and other underground music from around the world.
     </p>
 </div>
 
 <p class="leader"></p>
-  <%= render partial: "event", collection: @featured_events %>
+  <%= render partial: "shared/event", collection: @featured_events %>
 
   <% unless @current_events.empty? %>
-    <%= render partial: "event", collection: @current_events %>
+    <%= render partial: "shared/event", collection: @current_events %>
 
     <% unless @future_events.empty? %>
       <div class="featured">
@@ -53,10 +53,10 @@ We support local and northwest music and other underground music from around the
       </div>
     <% end %>
   <% else %>
-    <%= render partial: "event", collection: @future_events %>
+    <%= render partial: "shared/event", collection: @future_events %>
   <% end %>
 
-  <% render partial: "event", collection: @static_events %>
+  <% render partial: "shared/event", collection: @static_events %>
 
   <div class="featured">
     <h3>Hollow Earth Chat</h3>

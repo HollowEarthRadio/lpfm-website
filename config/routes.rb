@@ -12,6 +12,7 @@ LpfmWebsite::Application.routes.draw do
   get "/about", controller: "home", action: 'about'
   get "/contact", controller: "home", action: 'contact'
   get "/schedule", controller: "home", action: 'schedule'
+  get "/events", controller: "events", action: 'index'
   #get "/donate", controller: "home", action: 'donate'
   get "/donate", to: redirect("https://khuh.givingfuel.com/twinbox")
   #get "/donate", to: redirect("https://khuh.givingfuel.com/cold-hard-donations")

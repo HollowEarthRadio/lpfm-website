@@ -12,6 +12,10 @@ class HomeController < ApplicationController
     @scheduled = Program.scheduled
   end
 
+  def events
+    @events = Event.future.visible
+  end
+
   def splash
     render layout: false
   end
