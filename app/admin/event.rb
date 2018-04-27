@@ -1,6 +1,13 @@
 ActiveAdmin.register Event do
   config.clear_sidebar_sections!
 
+  controller do
+    def scoped_collection
+      Event.future.order(start_time: :asc)
+    end
+  end
+
+
   index do
     selectable_column
     column :id
