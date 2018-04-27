@@ -43,7 +43,7 @@ We support local and NW music and other underground music from around the world.
 <p class="leader"></p>
   <br/><br/>
   <h2> Events This Week </h2>
-
+  <p><%= link_to "See All Upcoming Events", events_path %> </p>
   <%= render partial: "shared/event", collection: @featured_events %>
 
   <% unless @current_events.empty? %>
@@ -53,7 +53,7 @@ We support local and NW music and other underground music from around the world.
       <div class="featured">
       <h3>Next week:</h3>
         <%= render partial: "future_event", collection: @future_events %>
-        <h3> <%= link_to "All Upcoming Events", events_path %> </h3>
+        <p><%= link_to "See All Upcoming Events", events_path %> </p>
       </div>
     <% end %>
   <% else %>
