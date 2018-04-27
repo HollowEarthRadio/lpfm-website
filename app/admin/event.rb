@@ -5,6 +5,9 @@ ActiveAdmin.register Event do
     selectable_column
     column :id
     column :name
+    column :start_time
+    column :no_start_time
+    column :featured
     column :public
     actions
   end
