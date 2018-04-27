@@ -3,8 +3,8 @@ class EventDecorator < Draper::Decorator
   delegate_all
 
   def hint_image
-    if source.event_image.present?
-      h.image_tag(source.event_image.url(:cropped))
+    if object.event_image.present?
+      h.image_tag(object.event_image.url(:cropped))
     else
       "Upload an image to go with your event"
     end
