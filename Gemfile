@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby "2.2.2"
+ruby "2.5.1"
 
 gem 'activeadmin'
 
@@ -16,9 +16,11 @@ gem 'pg', '~> 0.20'
 gem 'sass-rails'   # Use SCSS for stylesheets
 gem 'thin'
 gem 'uglifier'     # Use Uglifier as compressor for JavaScript assets
+gem 'koala'        # Facebook API
+gem 'omniauth'     # Facebook Tokens
+gem 'omniauth-facebook' # Facebook Tokens
 
 # what are these ?
-gem 'koala'
 gem 'rails_autolink'
 gem 'dalli'
 gem 'memcachier'

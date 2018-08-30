@@ -27,21 +27,30 @@ task :update_facebook => :environment do
   # FACEBOOK ACCESS
   ##################
   oauth_app = Koala::Facebook::OAuth.new(ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET']);
-  access_token = oauth_app.get_app_access_token;
-  koala_api = Koala::Facebook::API.new(access_token);
+  user_access_token = FacebookToken.latest.access_token
 
-  fb_events = koala_api.get_connections("hollowearthradio", "events").sort_by {|i| i["start_time"]}
+  koala_user_api = Koala::Facebook::API.new(user_access_token);
+
+  accounts = koala_user_api.get_object("me/accounts", { fields: "name,id,access_token" })
+
+  hollow_earth_account = accounts.find{ |account| account["name"]=="Hollow Earth Radio" }
+
+  koala_api = Koala::Facebook::API.new(hollow_earth_account["access_token"])
+
+  fb_events = koala_api.get_connection("me", "events").sort_by {|i| i["start_time"]}
   puts "\nAccessing facebook events "
   #need to fetch event by identifier so you get all the information
   puts "\nSearching for dirty events..."
 
   fb_events.each do |e|
-    ie = koala_api.get_object(e["id"]);
+    ie = koala_api.get_object(e["id"], { fields: "cover,description,updated_time,name,start_time,id,interested_count,place" });
 
-    unless e["id"].nil? || e["id"].blank?
-      fb_picture_url = koala_api.get_picture(e["id"], { type: "large" });
+    unless e["id"].nil? || e["id"].blank? || ie["cover"].nil? || ie["cover"].blank? || ie["cover"]["source"].nil? || ie["cover"]["source"].blank?
+      fb_picture_url = ie["cover"]["source"]
+      fb_picture = open(fb_picture_url)
     else
       fb_picture_url = ""
+      fb_picture = nil
     end
 
     unless ie["description"].nil? || ie["description"].blank?
@@ -53,15 +62,15 @@ task :update_facebook => :environment do
     edatabase = Event.where(:fb_id => ie["id"]).first;
     if edatabase
       if !ie["updated_time"].nil? && ie["updated_time"] > edatabase.updated_at
-  p
+  
         puts "\n**found dirty facebook event - "+ie["name"]
 
         edatabase.name = ie["name"]
         edatabase.start_time = ie["start_time"].to_datetime
-        edatabase.location = ie["location"]
+        edatabase.location = ie["place"]["name"]
         edatabase.body = fb_event_description
         edatabase.fb_id = ie["id"]
-        edatabase.event_image = open(fb_picture_url)
+        edatabase.event_image = fb_picture
         edatabase.save
         puts "***updated "+edatabase.name
       else
@@ -69,15 +78,16 @@ task :update_facebook => :environment do
       end
     else
       puts "***database entry not found, adding to database "+ie["name"]
+      
       edatabase = Event.new( :name => ie["name"],
                              :start_time => ie["start_time"].to_datetime,
                              :no_start_time => false,
-                             :location => ie["location"],
+                             :location => ie["place"]["name"],
                              :body => fb_event_description,
                              :public => true,
                              :featured => false,
                              :fb_id => ie["id"],
-                             :event_image => open(fb_picture_url) )
+                             :event_image => fb_picture )
       edatabase.save
       puts "***saved "+edatabase.name
     end
