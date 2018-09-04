@@ -15,13 +15,17 @@ ActiveAdmin.register_page "Facebook Token" do
 
     FacebookToken.create(access_token: new_access_token, refresh_token: "");
 
-    redirect_to "/admin/facebook_token"
+    redirect_to "/admin/facebook_token"    
   end
 
-  content title: 'Get Token' do
+  content title: 'Facebook Admin' do
     section do
       div do
-        link_to 'Facebook Login', '/auth/facebook'
+        if current_user && current_user.facebook?
+          button_to 'Update Token', '/auth/facebook'
+        else
+          'You must be a Facebook Admin to use this page'
+        end
       end
     end
   end
