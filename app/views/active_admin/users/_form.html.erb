@@ -12,8 +12,7 @@
 <div id="status"></div>
 <h3>Roles</h3>
 <% Role.all.each do |role| %>
-  <% if role.name == 'facebook' && current_user && !current_user.facebook? %>
-  <% else %>
+  <% if role.name != 'facebook' || (current_user && current_user.facebook?) %>
     <%= check_box_tag role.name,
           role.id,
           checked = @user.roles.include?(role),
