@@ -11,7 +11,6 @@ task :update_facebook => :environment do
   rescue => e
     puts e.message
     puts e.backtrace
-    FacebookMailer.failure_email(e)
   end
 end
 
