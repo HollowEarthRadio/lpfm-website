@@ -73,7 +73,6 @@ def get_facebook_page_token
 
   hollow_earth_account = accounts.find{ |account| account["name"]=="Hollow Earth Radio" }
   hollow_earth_account["access_token"]
-  'foobar'
 end
 
 def get_facebook_events(koala_api)
