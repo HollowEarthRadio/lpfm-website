@@ -17,7 +17,8 @@ gem 'sass-rails'   # Use SCSS for stylesheets
 gem 'thin'
 gem 'uglifier'     # Use Uglifier as compressor for JavaScript assets
 gem 'koala'        # Facebook API
-gem 'omniauth', '~> 1.1.2'     # Facebook Tokens
+gem 'omniauth'     # Facebook Tokens
+gem 'omniauth-oauth2'	#OAuth tokens
 gem 'omniauth-facebook' # Facebook Tokens
 
 # what are these ?
