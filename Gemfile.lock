@@ -640,6 +640,8 @@ GEM
     has_scope (0.7.1)
       actionpack (>= 4.1, < 5.2)
       activesupport (>= 4.1, < 5.2)
+    hashie (3.5.7)
+    httpauth (0.2.1)
     i18n (1.0.1)
       concurrent-ruby (~> 1.0)
     inherited_resources (1.8.0)
@@ -683,10 +685,23 @@ GEM
     mini_mime (1.0.0)
     mini_portile2 (2.3.0)
     minitest (5.11.3)
+    multi_json (1.13.1)
     multipart-post (2.0.0)
     nio4r (2.3.0)
     nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)
+    oauth2 (0.6.1)
+      faraday (~> 0.7)
+      httpauth (~> 0.1)
+      multi_json (~> 1.3)
+    omniauth (1.8.1)
+      hashie (>= 3.4.6, < 3.6.0)
+      rack (>= 1.6.2, < 3)
+    omniauth-facebook (1.4.0)
+      omniauth-oauth2 (~> 1.0.2)
+    omniauth-oauth2 (1.0.2)
+      oauth2 (~> 0.6.0)
+      omniauth (~> 1.0)
     orm_adapter (0.5.0)
     paperclip (5.2.1)
       activemodel (>= 4.2.0)
@@ -803,6 +818,8 @@ DEPENDENCIES
   jquery-rails
   koala
   memcachier
+  omniauth
+  omniauth-facebook
   paperclip (~> 5.2.1)
   pg (~> 0.20)
   pry
@@ -816,7 +833,7 @@ DEPENDENCIES
   uglifier
 
 RUBY VERSION
-   ruby 2.2.2p95
+   ruby 2.5.1p57
 
 BUNDLED WITH
-   1.14.5
+   1.16.3

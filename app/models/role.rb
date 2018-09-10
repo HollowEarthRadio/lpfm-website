@@ -11,4 +11,8 @@ class Role < ActiveRecord::Base
   def self.djs
     users("dj")
   end
+
+  def self.facebook_admins
+    users("facebook")
+  end
 end

@@ -12,4 +12,8 @@ class User < ActiveRecord::Base
   def dj?
     roles.map(&:name).include?('dj')
   end
+
+  def facebook?
+    roles.map(&:name).include?('facebook')
+  end
 end
