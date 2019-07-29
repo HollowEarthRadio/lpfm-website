@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
-ruby "2.5.1"
+ruby "2.5.3"
 
 gem 'activeadmin'
 
-gem 'rails', '~> 5'
+gem 'rails', '~> 5.2.3'
 
 gem 'aws-sdk'      # Amazon's official ruby gem; for paperclip
 gem 'coffee-rails' # Use CoffeeScript for .js.coffee assets and views
