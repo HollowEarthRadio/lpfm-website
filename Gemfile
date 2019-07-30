@@ -20,6 +20,7 @@ gem 'koala'        # Facebook API
 gem 'omniauth'     # Facebook Tokens
 gem 'omniauth-oauth2'	#OAuth tokens
 gem 'omniauth-facebook' # Facebook Tokens
+gem 'omniauth-rails_csrf_protection', '~> 0.1.2'
 
 # what are these ?
 gem 'rails_autolink'
