@@ -29,7 +29,7 @@ module ApplicationHelper
   end
 
   def dj_application(msg = "Want a show? Fill out our ONLINE APPLICATION")
-    link_to(msg, "https://to.khuh.club/wannadj", target: '_blank')
+    link_to(msg, "https://airtable.com/shrngmv1iKvwHZNNf", target: '_blank')
   end
 
   private
