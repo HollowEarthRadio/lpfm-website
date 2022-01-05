@@ -5,7 +5,7 @@ module ApplicationHelper
   end
 
   def map_link
-    link_to "2018a E. Union St, Seattle, WA 98122", "https://maps.google.com/maps?q=2018a+E+Union+St,+Seattle,+WA&hl=en&sll=47.613028,-122.342064&sspn=0.268013,0.396881&hnear=2018+E+Union+St,+Seattle,+Washington+98122&t=m&z=16"
+    link_to "... WE ARE MOVING BUT DONT HAVE A NEW SPACE YET PLEASE SEND ANY MAIL TO: P.O. Box 21066, Seattle, WA 98111", "https://www.hollowearthradio.org/contact"
   end
 
   def info_mailto(msg = "email us")
